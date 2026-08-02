@@ -1,0 +1,8 @@
+﻿services:
+  - type: web
+    name: schema-pilot
+    env: docker
+    plan: free
+    region: oregon
+    buildCommand: ""
+    startCommand: ""
