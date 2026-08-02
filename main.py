@@ -1,44 +1,26 @@
-import os
-import sys
-import subprocess
+﻿import os
+import uvicorn
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import HTMLResponse
 
-def print_banner():
-    print('=' * 60)
-    print('🚀 SCHEMAPILOT - Autonomous Analytics & Governance Engine')
-    print('=' * 60)
+app = FastAPI(title="SchemaPilot API", version="1.0.0")
 
-def main():
-    while True:
-        print_banner()
-        print('Select an option:')
-        print('1. Run Multi-Agent SQL Query (Architect -> Coder -> Critic)')
-        print('2. Run Audited Workflow with Telemetry Logging')
-        print('3. Run Autonomous Auto-Coder & Self-Debugging Agent')
-        print('4. Launch FastAPI Web Server')
-        print('5. Exit')
-        
-        choice = input('\nEnter your choice (1-5): ').strip()
-        
-        if choice == '1':
-            print('\n--- Running Multi-Agent Healing Workflow ---')
-            subprocess.run([sys.executable, 'multi_agent_healing.py'])
-        elif choice == '2':
-            print('\n--- Running Audited Telemetry Workflow ---')
-            subprocess.run([sys.executable, 'multi_agent_audited.py'])
-        elif choice == '3':
-            print('\n--- Running Auto-Coder Agent ---')
-            subprocess.run([sys.executable, 'auto_coder_agent.py'])
-        elif choice == '4':
-            print('\n--- Starting FastAPI Web Server ---')
-            print('Server will run at http://127.0.0.1:8000 (Press Ctrl+C to stop)')
-            subprocess.run([sys.executable, '-m', 'uvicorn', 'app.main:app', '--reload'])
-        elif choice == '5':
-            print('\nExiting SchemaPilot. Goodbye! 👋')
-            break
-        else:
-            print('❌ Invalid choice. Please enter a number between 1 and 5.')
-        
-        input('\nPress Enter to return to the main menu...')
+# Mount static files if directory exists
+if os.path.exists("static"):
+    app.mount("/static", StaticFiles(directory="static"), name="static")
 
-if __name__ == '__main__':
-    main()
+@app.get("/", response_class=HTMLResponse)
+def read_root():
+    if os.path.exists("static/index.html"):
+        with open("static/index.html", "r", encoding="utf-8") as f:
+            return f.read()
+    return "<h1>Welcome to SchemaPilot 🚀</h1><p>Your AI-powered schema management agent is running successfully.</p>"
+
+@app.get("/health")
+def health_check():
+    return {"status": "healthy", "service": "schema-pilot"}
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
