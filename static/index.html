@@ -184,13 +184,13 @@
                     <i class="ph ph-code text-brand-400 text-lg"></i>
                     <h3 class="font-semibold text-sm text-white">Interactive "Try It" Payload Console</h3>
                 </div>
-                <span class="text-[11px] text-slate-400">Test endpoints with custom JSON parameters or test data</span>
+                <span class="text-[11px] text-slate-400">Test endpoints with custom questions or JSON parameters</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
                 <div>
                     <label class="block text-[11px] font-medium text-slate-400 mb-1">Select Endpoint</label>
                     <select id="custom-endpoint" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-brand-500">
-                        <option value="/agent">POST /agent (Standard)</option>
+                        <option value="/agent">POST /agent (Dynamic Analyst)</option>
                         <option value="/multi-agent">POST /multi-agent (Multi-Agent)</option>
                         <option value="/multi-agent-audited">POST /multi-agent-audited (Audit)</option>
                         <option value="/multi-agent-healing">POST /multi-agent-healing (Healing)</option>
@@ -200,8 +200,8 @@
                     </select>
                 </div>
                 <div class="md:col-span-2">
-                    <label class="block text-[11px] font-medium text-slate-400 mb-1">Custom JSON Payload (Optional)</label>
-                    <input type="text" id="custom-payload" value='{"test_mode": true, "custom_schema": "users_v2"}' class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs font-mono text-emerald-400 focus:outline-none focus:border-brand-500">
+                    <label class="block text-[11px] font-medium text-slate-400 mb-1">Custom JSON Payload (Ask any question)</label>
+                    <input type="text" id="custom-payload" value='{"parameters": {"question": "What are our total sales by product category?"}}' class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs font-mono text-emerald-400 focus:outline-none focus:border-brand-500">
                 </div>
                 <div>
                     <label class="block text-[11px] font-medium text-slate-400 mb-1">&nbsp;</label>
@@ -239,7 +239,7 @@
                     <div class="animate-spin rounded-full h-8 w-8 border-2 border-brand-500 border-t-transparent"></div>
                     <span class="ml-3 text-xs font-mono text-slate-400">Executing agent workflow on DuckDB cluster...</span>
                 </div>
-                <pre id="output-box" class="font-mono text-xs text-emerald-400 bg-slate-950 p-2 overflow-x-auto max-h-[500px] whitespace-pre-wrap leading-relaxed">System initialized successfully. Select any action card above or use the Custom Payload Console to test endpoints.</pre>
+                <pre id="output-box" class="font-mono text-xs text-emerald-400 bg-slate-950 p-2 overflow-x-auto max-h-[500px] whitespace-pre-wrap leading-relaxed">System initialized successfully. Select any action card above or use the Custom Payload Console to test custom queries.</pre>
             </div>
         </div>
 
@@ -286,15 +286,9 @@
 
             try {
                 const response = await fetch(endpoint, { method: 'POST' });
-                if (!response.ok) {
-                    const getRes = await fetch(endpoint);
-                    if (!getRes.ok) throw new Error(`HTTP status ${getRes.status}`);
-                    const json = await getRes.json();
-                    renderOutput(json);
-                } else {
-                    const json = await response.json();
-                    renderOutput(json);
-                }
+                const json = await response.json();
+                renderOutput(json);
+
                 const duration = Math.round(performance.now() - startTime);
                 document.getElementById('latency-metric').innerText = `${duration}ms`;
                 resultTitle.innerText = `${actionName} (${endpoint}) — Completed (${duration}ms)`;
@@ -359,8 +353,6 @@
             outputBox.classList.remove('hidden');
             outputBox.className = 'font-mono text-xs text-emerald-400 bg-slate-950 p-2 overflow-x-auto max-h-[500px] whitespace-pre-wrap leading-relaxed';
             outputBox.innerText = JSON.stringify(data, null, 2);
-            
-            // Automatically scroll down to the terminal output panel so you never miss it
             outputBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
