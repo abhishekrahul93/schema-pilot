@@ -49,7 +49,11 @@ RULES:
     )
     
     response = agent_executor.invoke({"input": question})
-    return {"question": question, "output": response['output']}
+    return {
+        "action": "Dynamic Analyst",
+        "question": question,
+        "output": response['output']
+    }
 
 if __name__ == "__main__":
     print(run())
