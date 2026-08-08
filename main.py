@@ -1,10 +1,11 @@
 import os
+import traceback
 import uvicorn
 from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 
-# Import your agent and metadata modules
+# Import your agent and metadata modules safely
 try:
     import agent
     import multi_agent
@@ -37,8 +38,6 @@ def health_check():
 @app.get("/agent")
 def run_agent():
     try:
-        # Assuming your agent module has a main runner or function, e.g., run() or inspect()
-        # Fallback to inspecting module attributes if specific function name varies
         if hasattr(agent, "run"):
             result = agent.run()
         elif hasattr(agent, "inspect_schema"):
@@ -47,7 +46,8 @@ def run_agent():
             result = {"status": "success", "message": "Standard agent executed successfully."}
         return {"action": "Standard Inspection", "result": result}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        tb = traceback.format_exc()
+        return {"action": "Standard Inspection", "error": str(e), "traceback": tb}
 
 @app.post("/multi-agent")
 @app.get("/multi-agent")
@@ -56,7 +56,8 @@ def run_multi_agent():
         result = multi_agent.run() if hasattr(multi_agent, "run") else {"status": "success", "message": "Multi-agent workflow executed."}
         return {"action": "Multi-Agent Validation", "result": result}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        tb = traceback.format_exc()
+        return {"action": "Multi-Agent Validation", "error": str(e), "traceback": tb}
 
 @app.post("/multi-agent-audited")
 @app.get("/multi-agent-audited")
@@ -65,7 +66,8 @@ def run_multi_agent_audited():
         result = multi_agent_audited.run() if hasattr(multi_agent_audited, "run") else {"status": "success", "message": "Audited pipeline executed."}
         return {"action": "Audited Pipeline", "result": result}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        tb = traceback.format_exc()
+        return {"action": "Audited Pipeline", "error": str(e), "traceback": tb}
 
 @app.post("/multi-agent-healing")
 @app.get("/multi-agent-healing")
@@ -74,7 +76,8 @@ def run_multi_agent_healing():
         result = multi_agent_healing.run() if hasattr(multi_agent_healing, "run") else {"status": "success", "message": "Self-healing audit executed."}
         return {"action": "Self-Healing Audit", "result": result}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        tb = traceback.format_exc()
+        return {"action": "Self-Healing Audit", "error": str(e), "traceback": tb}
 
 @app.post("/extract-metadata")
 @app.get("/extract-metadata")
@@ -83,7 +86,8 @@ def run_extract_metadata():
         result = extract_metadata.run() if hasattr(extract_metadata, "run") else {"status": "success", "message": "Metadata extracted."}
         return {"action": "Extract Metadata", "result": result}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        tb = traceback.format_exc()
+        return {"action": "Extract Metadata", "error": str(e), "traceback": tb}
 
 @app.post("/extract-alt-metadata")
 @app.get("/extract-alt-metadata")
@@ -92,7 +96,8 @@ def run_extract_alt_metadata():
         result = extract_alt_metadata.run() if hasattr(extract_alt_metadata, "run") else {"status": "success", "message": "Alt metadata extracted."}
         return {"action": "Extract Alt Metadata", "result": result}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        tb = traceback.format_exc()
+        return {"action": "Extract Alt Metadata", "error": str(e), "traceback": tb}
 
 @app.post("/evaluate")
 @app.get("/evaluate")
@@ -101,7 +106,8 @@ def run_evaluate():
         result = evaluate.run() if hasattr(evaluate, "run") else {"status": "success", "message": "Evaluation benchmark completed."}
         return {"action": "Evaluate Performance", "result": result}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        tb = traceback.format_exc()
+        return {"action": "Evaluate Performance", "error": str(e), "traceback": tb}
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
