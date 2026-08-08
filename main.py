@@ -84,9 +84,9 @@ def run_agent(request: Request, payload: Optional[AgentRequestPayload] = None):
         else:
             result = {"status": "success", "message": "Agent module loaded successfully."}
             
-        return {"action": "Standard Inspection", "result": result}
+        return {"action": "Dynamic Analyst", "result": result}
     except Exception as e:
-        return {"action": "Standard Inspection", "error": str(e), "traceback": traceback.format_exc()}
+        return {"action": "Dynamic Analyst", "error": str(e), "traceback": traceback.format_exc()}
 
 @app.post("/multi-agent")
 @app.get("/multi-agent")
