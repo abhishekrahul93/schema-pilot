@@ -177,6 +177,25 @@
             </div>
         </div>
 
+        <!-- Data & Queries Guide Banner -->
+        <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 mb-6 shadow-xl">
+            <div class="flex items-center space-x-3 mb-2">
+                <div class="p-2 bg-brand-500/10 text-brand-400 rounded-lg"><i class="ph ph-info text-lg"></i></div>
+                <h3 class="font-semibold text-sm text-white">How Data & Queries Work</h3>
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed mb-3">
+                Schema Pilot connects directly to a managed enterprise <strong class="text-slate-200">DuckDB</strong> database instance. Structured models and tables (orders, customers, product catalogs) are indexed via automated metadata pipelines.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs font-mono text-slate-300">
+                <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+                    <span class="text-brand-400 font-bold">1. Data Ingestion:</span> Loaded into local <code class="text-emerald-400">schemapilot.duckdb</code> and mapped via <code class="text-emerald-400">schema_config.yaml</code>.
+                </div>
+                <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+                    <span class="text-blue-400 font-bold">2. Custom Analysis:</span> Use the Payload Console below to pass analytical questions to the AI Agent.
+                </div>
+            </div>
+        </div>
+
         <!-- Interactive "Try It" Payload Console -->
         <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 mb-6 shadow-xl">
             <div class="flex items-center justify-between mb-3">
