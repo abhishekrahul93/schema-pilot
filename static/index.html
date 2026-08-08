@@ -1,1 +1,224 @@
-﻿<!DOCTYPE html><html><head><title>SchemaPilot Dashboard</title><style>body{font-family:Arial,sans-serif;background:#0f172a;color:#f8fafc;text-align:center;padding-top:50px;}.card{background:#1e293b;max-width:600px;margin:auto;padding:30px;border-radius:12px;}h1{color:#38bdf8;}</style></head><body><div class='card'><h1>SchemaPilot Dashboard 🚀</h1><p>Your AI-powered schema management agent is live and operational!</p></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schema Pilot | AI-Powered Schema Inspection & Validation</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen font-sans antialiased">
+    <!-- Header -->
+    <header class="border-b border-slate-800 bg-slate-950/50 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center shadow-lg shadow-brand-500/20 font-bold text-xl text-white">
+                    SP
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg text-white tracking-tight">Schema Pilot</h1>
+                    <p class="text-xs text-slate-400">AI-Powered DuckDB Schema Inspection & Multi-Agent Validation</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3">
+                <span id="health-badge" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700">
+                    <span class="w-2 h-2 mr-1.5 rounded-full bg-yellow-500 animate-pulse" id="health-dot"></span>
+                    Checking API...
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Action Control Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+            <!-- Card 1: Standard Agent Inspection -->
+            <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-5 flex flex-col justify-between hover:border-slate-600 transition">
+                <div>
+                    <h2 class="font-semibold text-white text-base mb-1">Standard Inspection</h2>
+                    <p class="text-xs text-slate-400 mb-4">Run core single-agent inspection against configured database schemas.</p>
+                </div>
+                <button onclick="runAction('/agent', 'Standard Inspection')" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-medium py-2 px-4 rounded-lg text-sm transition shadow-md shadow-brand-600/20 flex items-center justify-center space-x-2">
+                    <span>Run Agent</span>
+                </button>
+            </div>
+
+            <!-- Card 2: Multi-Agent Validation -->
+            <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-5 flex flex-col justify-between hover:border-slate-600 transition">
+                <div>
+                    <h2 class="font-semibold text-white text-base mb-1">Multi-Agent Workflow</h2>
+                    <p class="text-xs text-slate-400 mb-4">Execute collaborative multi-agent schema review and critique pipeline.</p>
+                </div>
+                <button onclick="runAction('/multi-agent', 'Multi-Agent Validation')" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-medium py-2 px-4 rounded-lg text-sm transition shadow-md shadow-brand-600/20 flex items-center justify-center space-x-2">
+                    <span>Run Multi-Agent</span>
+                </button>
+            </div>
+
+            <!-- Card 3: Audited Validation -->
+            <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-5 flex flex-col justify-between hover:border-slate-600 transition">
+                <div>
+                    <h2 class="font-semibold text-white text-base mb-1">Audited Pipeline</h2>
+                    <p class="text-xs text-slate-400 mb-4">Run strict compliance and audit trail generation on active schemas.</p>
+                </div>
+                <button onclick="runAction('/multi-agent-audited', 'Audited Pipeline')" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-medium py-2 px-4 rounded-lg text-sm transition shadow-md shadow-brand-600/20 flex items-center justify-center space-x-2">
+                    <span>Run Audit</span>
+                </button>
+            </div>
+
+            <!-- Card 4: Self-Healing Audit -->
+            <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-5 flex flex-col justify-between hover:border-slate-600 transition">
+                <div>
+                    <h2 class="font-semibold text-white text-base mb-1">Self-Healing Audit</h2>
+                    <p class="text-xs text-slate-400 mb-4">Detect schema discrepancies and generate automated healing migration fixes.</p>
+                </div>
+                <button onclick="runAction('/multi-agent-healing', 'Self-Healing Audit')" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-medium py-2 px-4 rounded-lg text-sm transition shadow-md shadow-brand-600/20 flex items-center justify-center space-x-2">
+                    <span>Run Healing</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Secondary Actions & Metadata Extractions -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="bg-slate-800/40 border border-slate-700/40 rounded-xl p-4 flex items-center justify-between">
+                <div>
+                    <h3 class="font-medium text-sm text-white">Extract Metadata</h3>
+                    <p class="text-xs text-slate-400">Analyze current schema catalog</p>
+                </div>
+                <button onclick="runAction('/extract-metadata', 'Metadata Extraction')" class="bg-slate-700 hover:bg-slate-600 text-white px-3 py-1.5 rounded-lg text-xs transition">Extract</button>
+            </div>
+            <div class="bg-slate-800/40 border border-slate-700/40 rounded-xl p-4 flex items-center justify-between">
+                <div>
+                    <h3 class="font-medium text-sm text-white">Extract Alt Metadata</h3>
+                    <p class="text-xs text-slate-400">Analyze alternate schema config</p>
+                </div>
+                <button onclick="runAction('/extract-alt-metadata', 'Alternate Metadata')" class="bg-slate-700 hover:bg-slate-600 text-white px-3 py-1.5 rounded-lg text-xs transition">Extract Alt</button>
+            </div>
+            <div class="bg-slate-800/40 border border-slate-700/40 rounded-xl p-4 flex items-center justify-between">
+                <div>
+                    <h3 class="font-medium text-sm text-white">Evaluate Performance</h3>
+                    <p class="text-xs text-slate-400">Run evaluation benchmark tests</p>
+                </div>
+                <button onclick="runAction('/evaluate', 'Evaluation Benchmark')" class="bg-slate-700 hover:bg-slate-600 text-white px-3 py-1.5 rounded-lg text-xs transition">Evaluate</button>
+            </div>
+        </div>
+
+        <!-- Results Display Panel -->
+        <div class="bg-slate-800/80 border border-slate-700 rounded-xl overflow-hidden shadow-xl">
+            <div class="px-6 py-4 border-b border-slate-700 flex items-center justify-between bg-slate-900/50">
+                <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span class="ml-2 text-xs font-mono text-slate-400" id="result-title">output.log</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button onclick="clearOutput()" class="text-xs text-slate-400 hover:text-slate-200 transition">Clear Output</button>
+                </div>
+            </div>
+            <div class="p-6">
+                <div id="loading-spinner" class="hidden flex items-center justify-center py-12">
+                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-500"></div>
+                    <span class="ml-3 text-sm text-slate-300">Processing request against DuckDB & AI agents...</span>
+                </div>
+                <pre id="output-box" class="font-mono text-xs text-emerald-300 bg-slate-950 p-4 rounded-lg overflow-x-auto max-h-[500px] border border-slate-900 whitespace-pre-wrap">Select an action above to execute schema inspection or validation workflows...</pre>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Check health on page load
+        async function checkHealth() {
+            const badge = document.getElementById('health-badge');
+            const dot = document.getElementById('health-dot');
+            try {
+                const res = await fetch('/health');
+                if (res.ok) {
+                    badge.className = 'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-brand-500/10 text-brand-400 border border-brand-500/20';
+                    dot.className = 'w-2 h-2 mr-1.5 rounded-full bg-brand-500';
+                    badge.innerHTML = '<span class="w-2 h-2 mr-1.5 rounded-full bg-brand-500"></span>System Online';
+                } else {
+                    throw new Error('Unhealthy status');
+                }
+            } catch (err) {
+                badge.className = 'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-red-500/10 text-red-400 border border-red-500/20';
+                dot.className = 'w-2 h-2 mr-1.5 rounded-full bg-red-500';
+                badge.innerHTML = '<span class="w-2 h-2 mr-1.5 rounded-full bg-red-500"></span>API Offline';
+            }
+        }
+        checkHealth();
+
+        // Run endpoint action
+        async function runAction(endpoint, actionName) {
+            const outputBox = document.getElementById('output-box');
+            const spinner = document.getElementById('loading-spinner');
+            const resultTitle = document.getElementById('result-title');
+
+            resultTitle.innerText = `${actionName} (${endpoint})`;
+            outputBox.classList.add('hidden');
+            spinner.classList.remove('hidden');
+
+            try {
+                // Determine whether to use POST or GET based on standard backend conventions
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    // Fallback to GET if POST is not supported on certain routes
+                    const getResponse = await fetch(endpoint);
+                    if (!getResponse.ok) {
+                        throw new Error(`Server returned status ${getResponse.status} for ${endpoint}`);
+                    }
+                    const data = await getResponse.json();
+                    renderOutput(data);
+                    return;
+                }
+
+                const data = await response.json();
+                renderOutput(data);
+            } catch (err) {
+                outputBox.classList.remove('hidden');
+                outputBox.className = 'font-mono text-xs text-red-400 bg-slate-950 p-4 rounded-lg overflow-x-auto max-h-[500px] border border-slate-900 whitespace-pre-wrap';
+                outputBox.innerText = `Error executing ${actionName}:\n${err.message}\n\nPlease ensure the backend service is running and properly configured.`;
+            } finally {
+                spinner.classList.add('hidden');
+            }
+        }
+
+        function renderOutput(data) {
+            const outputBox = document.getElementById('output-box');
+            outputBox.classList.remove('hidden');
+            outputBox.className = 'font-mono text-xs text-emerald-300 bg-slate-950 p-4 rounded-lg overflow-x-auto max-h-[500px] border border-slate-900 whitespace-pre-wrap';
+            outputBox.innerText = JSON.stringify(data, null, 2);
+        }
+
+        function clearOutput() {
+            const outputBox = document.getElementById('output-box');
+            outputBox.innerText = 'Output cleared.';
+            document.getElementById('result-title').innerText = 'output.log';
+        }
+    </script>
+</body>
+</html>
