@@ -7,7 +7,7 @@ from langchain_community.utilities import SQLDatabase
 
 def load_schema_context(config_path="schema_config.yaml"):
     if not os.path.exists(config_path):
-        raise FileNotFoundError(f"? Could not find {config_path}. Run extract_metadata.py first!")
+        return "Database Type: DuckDB\nDatabase Name: schemapilot.duckdb"
     
     with open(config_path, "r") as f:
         config = yaml.safe_load(f)
@@ -16,14 +16,13 @@ def load_schema_context(config_path="schema_config.yaml"):
     for table_name, details in config.get("tables", {}).items():
         context_str += f"- Table/View: {table_name} ({details['type']})\n  Columns:\n"
         for col_name, col_info in details['columns'].items():
-            samples = ", ".join([str(s) for s in col_info['sample_values']])
+            samples = ", ".join([str(s) for s in col_info.get('sample_values', [])])
             context_str += f"    * {col_name} ({col_info['data_type']}) | Sample values: [{samples}]\n"
     return context_str
 
-def run_agent(question: str):
+def run(question: str = "What are the top 3 countries with the highest total order quantity?"):
     schema_context = load_schema_context()
     
-    # Use standard duckdb:// URI format recognized by duckdb-engine
     db = SQLDatabase.from_uri("duckdb:///schemapilot.duckdb")
     llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
     
@@ -49,12 +48,8 @@ RULES:
         prefix=system_prompt
     )
     
-    print(f"\n?? Question: {question}")
-    print("-" * 50)
     response = agent_executor.invoke({"input": question})
-    print("-" * 50)
-    print(f"?? Answer:\n{response['output']}")
+    return {"question": question, "output": response['output']}
 
 if __name__ == "__main__":
-    test_question = "What are the top 3 countries with the highest total order quantity?"
-    run_agent(test_question)
+    print(run())
