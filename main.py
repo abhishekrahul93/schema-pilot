@@ -65,7 +65,7 @@ def read_root():
 def health_check():
     return {"status": "healthy", "service": "schema-pilot"}
 
-# --- STANDARD AGENT ENDPOINTS ---
+# --- DYNAMIC AGENT ENDPOINTS ---
 
 @app.post("/agent")
 @app.get("/agent")
@@ -73,18 +73,17 @@ def run_agent(request: Request, payload: Optional[AgentRequestPayload] = None):
     if not agent:
         return {"error": "Module 'agent' could not be imported."}
     try:
+        custom_question = None
+        if payload and payload.parameters:
+            custom_question = payload.parameters.get("question")
+        
         if hasattr(agent, "run"):
-            result = agent.run()
+            result = agent.run(question=custom_question) if custom_question else agent.run()
         elif hasattr(agent, "inspect_schema"):
             result = agent.inspect_schema()
-        elif hasattr(agent, "main"):
-            result = agent.main()
         else:
-            funcs = [func for func in dir(agent) if callable(getattr(agent, func)) and not func.startswith("_")]
-            if funcs:
-                result = getattr(agent, funcs[0])()
-            else:
-                result = {"status": "success", "message": "Agent module loaded, but no runner function found."}
+            result = {"status": "success", "message": "Agent module loaded successfully."}
+            
         return {"action": "Standard Inspection", "result": result}
     except Exception as e:
         return {"action": "Standard Inspection", "error": str(e), "traceback": traceback.format_exc()}
