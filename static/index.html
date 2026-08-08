@@ -177,7 +177,7 @@
             </div>
         </div>
 
-        <!-- NEW: Interactive "Try It" Custom Payload Drawer -->
+        <!-- Interactive "Try It" Payload Console -->
         <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 mb-6 shadow-xl">
             <div class="flex items-center justify-between mb-3">
                 <div class="flex items-center space-x-2">
@@ -303,6 +303,7 @@
                 outputBox.className = 'font-mono text-xs text-red-400 bg-slate-950 p-2 overflow-x-auto max-h-[500px] whitespace-pre-wrap leading-relaxed';
                 outputBox.innerText = `Error executing ${actionName}:\n${err.message}`;
                 resultTitle.innerText = `${actionName} — Failed`;
+                outputBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             } finally {
                 spinner.classList.add('hidden');
             }
@@ -347,6 +348,7 @@
                 outputBox.classList.remove('hidden');
                 outputBox.className = 'font-mono text-xs text-red-400 bg-slate-950 p-2 overflow-x-auto max-h-[500px] whitespace-pre-wrap leading-relaxed';
                 outputBox.innerText = `Error executing custom request:\n${err.message}`;
+                outputBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             } finally {
                 spinner.classList.add('hidden');
             }
@@ -357,6 +359,9 @@
             outputBox.classList.remove('hidden');
             outputBox.className = 'font-mono text-xs text-emerald-400 bg-slate-950 p-2 overflow-x-auto max-h-[500px] whitespace-pre-wrap leading-relaxed';
             outputBox.innerText = JSON.stringify(data, null, 2);
+            
+            // Automatically scroll down to the terminal output panel so you never miss it
+            outputBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
         function clearOutput() {
