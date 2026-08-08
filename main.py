@@ -1,23 +1,62 @@
 import os
 import traceback
 import uvicorn
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
+from pydantic import BaseModel, Field
+from typing import Optional, Dict, Any
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 
-# Import your agent and metadata modules safely
-try:
-    import agent
-    import multi_agent
-    import multi_agent_audited
-    import multi_agent_healing
-    import extract_metadata
-    import extract_alt_metadata
-    import evaluate
-except ImportError as e:
-    print(f"Warning: Could not import some backend modules: {e}")
+# Initialize Rate Limiter based on client IP address
+limiter = Limiter(key_func=get_remote_address)
 
 app = FastAPI(title="SchemaPilot API", version="1.0.0")
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
+class AgentRequestPayload(BaseModel):
+    test_mode: Optional[bool] = True
+    custom_schema: Optional[str] = Field(default="default", max_length=50)
+    parameters: Optional[Dict[str, Any]] = None
+
+# Safely import modules individually
+try:
+    import agent
+except Exception as e:
+    agent = None
+
+try:
+    import multi_agent
+except Exception as e:
+    multi_agent = None
+
+try:
+    import multi_agent_audited
+except Exception as e:
+    multi_agent_audited = None
+
+try:
+    import multi_agent_healing
+except Exception as e:
+    multi_agent_healing = None
+
+try:
+    import extract_metadata
+except Exception as e:
+    extract_metadata = None
+
+try:
+    import extract_alt_metadata
+except Exception as e:
+    extract_alt_metadata = None
+
+try:
+    import evaluate
+except Exception as e:
+    evaluate = None
 
 # Mount static files if directory exists
 if os.path.exists("static"):
@@ -28,86 +67,92 @@ def read_root():
     if os.path.exists("static/index.html"):
         with open("static/index.html", "r", encoding="utf-8") as f:
             return f.read()
-    return "<h1>Welcome to SchemaPilot 🚀</h1><p>Your AI-powered schema management agent is running successfully.</p>"
+    return "<h1>Welcome to SchemaPilot 🚀</h1>"
 
 @app.get("/health")
 def health_check():
     return {"status": "healthy", "service": "schema-pilot"}
 
+# --- COST-PROTECTED LLM ROUTES (Strict 5/hour limit per IP) ---
+
 @app.post("/agent")
-@app.get("/agent")
-def run_agent():
+@limiter.limit("5/hour")
+def run_agent(request: Request, payload: Optional[AgentRequestPayload] = None):
+    if not agent:
+        return {"error": "Module 'agent' could not be imported."}
     try:
-        if hasattr(agent, "run"):
-            result = agent.run()
-        elif hasattr(agent, "inspect_schema"):
-            result = agent.inspect_schema()
-        else:
-            result = {"status": "success", "message": "Standard agent executed successfully."}
+        result = agent.run() if hasattr(agent, "run") else agent.inspect_schema()
         return {"action": "Standard Inspection", "result": result}
     except Exception as e:
-        tb = traceback.format_exc()
-        return {"action": "Standard Inspection", "error": str(e), "traceback": tb}
+        return {"action": "Standard Inspection", "error": str(e), "traceback": traceback.format_exc()}
 
 @app.post("/multi-agent")
-@app.get("/multi-agent")
-def run_multi_agent():
+@limiter.limit("5/hour")
+def run_multi_agent(request: Request, payload: Optional[AgentRequestPayload] = None):
+    if not multi_agent:
+        return {"error": "Module 'multi_agent' could not be imported."}
     try:
-        result = multi_agent.run() if hasattr(multi_agent, "run") else {"status": "success", "message": "Multi-agent workflow executed."}
+        result = multi_agent.run() if hasattr(multi_agent, "run") else {"status": "success"}
         return {"action": "Multi-Agent Validation", "result": result}
     except Exception as e:
-        tb = traceback.format_exc()
-        return {"action": "Multi-Agent Validation", "error": str(e), "traceback": tb}
+        return {"action": "Multi-Agent Validation", "error": str(e), "traceback": traceback.format_exc()}
 
 @app.post("/multi-agent-audited")
-@app.get("/multi-agent-audited")
-def run_multi_agent_audited():
+@limiter.limit("5/hour")
+def run_multi_agent_audited(request: Request, payload: Optional[AgentRequestPayload] = None):
+    if not multi_agent_audited:
+        return {"error": "Module 'multi_agent_audited' could not be imported."}
     try:
-        result = multi_agent_audited.run() if hasattr(multi_agent_audited, "run") else {"status": "success", "message": "Audited pipeline executed."}
+        result = multi_agent_audited.run() if hasattr(multi_agent_audited, "run") else {"status": "success"}
         return {"action": "Audited Pipeline", "result": result}
     except Exception as e:
-        tb = traceback.format_exc()
-        return {"action": "Audited Pipeline", "error": str(e), "traceback": tb}
+        return {"action": "Audited Pipeline", "error": str(e), "traceback": traceback.format_exc()}
 
 @app.post("/multi-agent-healing")
-@app.get("/multi-agent-healing")
-def run_multi_agent_healing():
+@limiter.limit("5/hour")
+def run_multi_agent_healing(request: Request, payload: Optional[AgentRequestPayload] = None):
+    if not multi_agent_healing:
+        return {"error": "Module 'multi_agent_healing' could not be imported."}
     try:
-        result = multi_agent_healing.run() if hasattr(multi_agent_healing, "run") else {"status": "success", "message": "Self-healing audit executed."}
+        result = multi_agent_healing.run() if hasattr(multi_agent_healing, "run") else {"status": "success"}
         return {"action": "Self-Healing Audit", "result": result}
     except Exception as e:
-        tb = traceback.format_exc()
-        return {"action": "Self-Healing Audit", "error": str(e), "traceback": tb}
+        return {"action": "Self-Healing Audit", "error": str(e), "traceback": traceback.format_exc()}
+
+# --- LOCAL UTILITY ROUTES (Abuse protection at 10/minute or 5/minute) ---
 
 @app.post("/extract-metadata")
-@app.get("/extract-metadata")
-def run_extract_metadata():
+@limiter.limit("10/minute")
+def run_extract_metadata(request: Request):
+    if not extract_metadata:
+        return {"error": "Module 'extract_metadata' could not be imported."}
     try:
-        result = extract_metadata.run() if hasattr(extract_metadata, "run") else {"status": "success", "message": "Metadata extracted."}
+        result = extract_metadata.run() if hasattr(extract_metadata, "run") else {"status": "success"}
         return {"action": "Extract Metadata", "result": result}
     except Exception as e:
-        tb = traceback.format_exc()
-        return {"action": "Extract Metadata", "error": str(e), "traceback": tb}
+        return {"action": "Extract Metadata", "error": str(e), "traceback": traceback.format_exc()}
 
 @app.post("/extract-alt-metadata")
-@app.get("/extract-alt-metadata")
-def run_extract_alt_metadata():
+@limiter.limit("10/minute")
+def run_extract_alt_metadata(request: Request):
+    if not extract_alt_metadata:
+        return {"error": "Module 'extract_alt_metadata' could not be imported."}
     try:
-        result = extract_alt_metadata.run() if hasattr(extract_alt_metadata, "run") else {"status": "success", "message": "Alt metadata extracted."}
+        result = extract_alt_metadata.run() if hasattr(extract_alt_metadata, "run") else {"status": "success"}
         return {"action": "Extract Alt Metadata", "result": result}
     except Exception as e:
-        tb = traceback.format_exc()
-        return {"action": "Extract Alt Metadata", "error": str(e), "traceback": tb}
+        return {"action": "Extract Alt Metadata", "error": str(e), "traceback": traceback.format_exc()}
 
 @app.post("/evaluate")
-@app.get("/evaluate")
-def run_evaluate():
+@limiter.limit("5/minute")
+def run_evaluate(request: Request):
+    if not evaluate:
+        return {"error": "Module 'evaluate' could not be imported."}
     try:
-        result = evaluate.run() if hasattr(evaluate, "run") else {"status": "success", "message": "Evaluation benchmark completed."}
+        result = evaluate.run() if hasattr(evaluate, "run") else {"status": "success"}
         return {"action": "Evaluate Performance", "result": result}
     except Exception as e:
-        tb = traceback.format_exc()
-        return {"action": "Evaluate Performance", "error": str(e), "traceback": tb}
+        return {"action": "Evaluate Performance", "error": str(e), "traceback": traceback.format_exc()}
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
