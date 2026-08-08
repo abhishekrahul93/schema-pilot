@@ -81,7 +81,18 @@ def run_agent(request: Request, payload: Optional[AgentRequestPayload] = None):
     if not agent:
         return {"error": "Module 'agent' could not be imported."}
     try:
-        result = agent.run() if hasattr(agent, "run") else agent.inspect_schema()
+        if hasattr(agent, "run"):
+            result = agent.run()
+        elif hasattr(agent, "inspect_schema"):
+            result = agent.inspect_schema()
+        elif hasattr(agent, "main"):
+            result = agent.main()
+        else:
+            funcs = [func for func in dir(agent) if callable(getattr(agent, func)) and not func.startswith("_")]
+            if funcs:
+                result = getattr(agent, funcs[0])()
+            else:
+                result = {"status": "success", "message": "Agent module loaded, but no runner function found."}
         return {"action": "Standard Inspection", "result": result}
     except Exception as e:
         return {"action": "Standard Inspection", "error": str(e), "traceback": traceback.format_exc()}
