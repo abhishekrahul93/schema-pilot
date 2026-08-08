@@ -6,16 +6,8 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel, Field
 from typing import Optional, Dict, Any
-from slowapi import Limiter, _rate_limit_exceeded_handler
-from slowapi.util import get_remote_address
-from slowapi.errors import RateLimitExceeded
-
-# Initialize Rate Limiter based on client IP address
-limiter = Limiter(key_func=get_remote_address)
 
 app = FastAPI(title="SchemaPilot API", version="1.0.0")
-app.state.limiter = limiter
-app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 class AgentRequestPayload(BaseModel):
     test_mode: Optional[bool] = True
@@ -73,10 +65,10 @@ def read_root():
 def health_check():
     return {"status": "healthy", "service": "schema-pilot"}
 
-# --- COST-PROTECTED LLM ROUTES (Strict 5/hour limit per IP) ---
+# --- STANDARD AGENT ENDPOINTS ---
 
 @app.post("/agent")
-@limiter.limit("5/hour")
+@app.get("/agent")
 def run_agent(request: Request, payload: Optional[AgentRequestPayload] = None):
     if not agent:
         return {"error": "Module 'agent' could not be imported."}
@@ -98,7 +90,7 @@ def run_agent(request: Request, payload: Optional[AgentRequestPayload] = None):
         return {"action": "Standard Inspection", "error": str(e), "traceback": traceback.format_exc()}
 
 @app.post("/multi-agent")
-@limiter.limit("5/hour")
+@app.get("/multi-agent")
 def run_multi_agent(request: Request, payload: Optional[AgentRequestPayload] = None):
     if not multi_agent:
         return {"error": "Module 'multi_agent' could not be imported."}
@@ -109,7 +101,7 @@ def run_multi_agent(request: Request, payload: Optional[AgentRequestPayload] = N
         return {"action": "Multi-Agent Validation", "error": str(e), "traceback": traceback.format_exc()}
 
 @app.post("/multi-agent-audited")
-@limiter.limit("5/hour")
+@app.get("/multi-agent-audited")
 def run_multi_agent_audited(request: Request, payload: Optional[AgentRequestPayload] = None):
     if not multi_agent_audited:
         return {"error": "Module 'multi_agent_audited' could not be imported."}
@@ -120,7 +112,7 @@ def run_multi_agent_audited(request: Request, payload: Optional[AgentRequestPayl
         return {"action": "Audited Pipeline", "error": str(e), "traceback": traceback.format_exc()}
 
 @app.post("/multi-agent-healing")
-@limiter.limit("5/hour")
+@app.get("/multi-agent-healing")
 def run_multi_agent_healing(request: Request, payload: Optional[AgentRequestPayload] = None):
     if not multi_agent_healing:
         return {"error": "Module 'multi_agent_healing' could not be imported."}
@@ -130,10 +122,8 @@ def run_multi_agent_healing(request: Request, payload: Optional[AgentRequestPayl
     except Exception as e:
         return {"action": "Self-Healing Audit", "error": str(e), "traceback": traceback.format_exc()}
 
-# --- LOCAL UTILITY ROUTES (Abuse protection at 10/minute or 5/minute) ---
-
 @app.post("/extract-metadata")
-@limiter.limit("10/minute")
+@app.get("/extract-metadata")
 def run_extract_metadata(request: Request):
     if not extract_metadata:
         return {"error": "Module 'extract_metadata' could not be imported."}
@@ -144,7 +134,7 @@ def run_extract_metadata(request: Request):
         return {"action": "Extract Metadata", "error": str(e), "traceback": traceback.format_exc()}
 
 @app.post("/extract-alt-metadata")
-@limiter.limit("10/minute")
+@app.get("/extract-alt-metadata")
 def run_extract_alt_metadata(request: Request):
     if not extract_alt_metadata:
         return {"error": "Module 'extract_alt_metadata' could not be imported."}
@@ -155,7 +145,7 @@ def run_extract_alt_metadata(request: Request):
         return {"action": "Extract Alt Metadata", "error": str(e), "traceback": traceback.format_exc()}
 
 @app.post("/evaluate")
-@limiter.limit("5/minute")
+@app.get("/evaluate")
 def run_evaluate(request: Request):
     if not evaluate:
         return {"error": "Module 'evaluate' could not be imported."}
