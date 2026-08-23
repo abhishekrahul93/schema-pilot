@@ -54,10 +54,6 @@ python evals/run_evals.py
 
 ## 📊 Automated Evaluation Pipeline
 
-SchemaPilot includes a custom test harness (`evals/run_evals.py`) that dynamically loads the FastAPI application, executes test cases against specific routes, and scores outputs using both **exact-match properties** and **LLM-as-a-judge** semantic rubrics. All test results are automatically logged as JSON reports inside `evals/results/`.
-
-```
-
-Just paste this into GitHub, click **Commit changes**, and your repository will look fantastic! Let me know when you've saved it.
+SchemaPilot includes a custom test harness (`evals/run_evals.py`) that dynamically loads the FastAPI application, executes test cases against specific routes, and scores outputs using both **exact-match properties** and **LLM-as-a-judge** semantic rubrics. All test results are automatically logged as JSON reports inside `evals/results/`
 
 ```
