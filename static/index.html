@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schema Pilot | Enterprise AI Schema & Database Operations</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & Phosphor Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        code, pre { font-family: 'JetBrains Mono', monospace; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-brand-500 selection:text-white flex flex-col justify-between">
+
+    <!-- Top Navigation Bar -->
+    <header class="border-b border-slate-800/80 bg-slate-900/60 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center shadow-lg shadow-brand-500/20 font-bold text-xl text-white tracking-wider">
+                    SP
+                </div>
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <h1 class="font-bold text-base text-white tracking-tight">Schema Pilot</h1>
+                        <span class="bg-brand-500/10 text-brand-400 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-brand-500/20">v1.0 Live</span>
+                    </div>
+                    <p class="text-xs text-slate-400">Autonomous DuckDB Schema Inspection & Multi-Agent Validation Platform</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <div id="health-badge" class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-slate-900 text-slate-300 border border-slate-800 shadow-sm">
+                    <span class="w-2 h-2 mr-2 rounded-full bg-yellow-500 animate-pulse" id="health-dot"></span>
+                    <span id="health-text">Connecting API...</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-grow">
+        
+        <!-- Metrics Row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            <div class="bg-slate-900/50 border border-slate-800/80 rounded-xl p-4 flex items-center space-x-4">
+                <div class="p-3 bg-brand-500/10 text-brand-400 rounded-lg border border-brand-500/20"><i class="ph ph-cpu text-xl"></i></div>
+                <div><p class="text-xs text-slate-400 font-medium">Active Agents</p><h4 class="text-lg font-bold text-white">4 Online</h4></div>
+            </div>
+            <div class="bg-slate-900/50 border border-slate-800/80 rounded-xl p-4 flex items-center space-x-4">
+                <div class="p-3 bg-blue-500/10 text-blue-400 rounded-lg border border-blue-500/20"><i class="ph ph-database text-xl"></i></div>
+                <div><p class="text-xs text-slate-400 font-medium">Database Core</p><h4 class="text-lg font-bold text-white">DuckDB Engine</h4></div>
+            </div>
+            <div class="bg-slate-900/50 border border-slate-800/80 rounded-xl p-4 flex items-center space-x-4">
+                <div class="p-3 bg-purple-500/10 text-purple-400 rounded-lg border border-purple-500/20"><i class="ph ph-shield-check text-xl"></i></div>
+                <div><p class="text-xs text-slate-400 font-medium">Compliance Audits</p><h4 class="text-lg font-bold text-white">Automated</h4></div>
+            </div>
+            <div class="bg-slate-900/50 border border-slate-800/80 rounded-xl p-4 flex items-center space-x-4">
+                <div class="p-3 bg-amber-500/10 text-amber-400 rounded-lg border border-amber-500/20"><i class="ph ph-activity text-xl"></i></div>
+                <div><p class="text-xs text-slate-400 font-medium">System Latency</p><h4 class="text-lg font-bold text-white" id="latency-metric">&lt; 45ms</h4></div>
+            </div>
+        </div>
+
+        <!-- Primary Action Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-6">
+            <!-- Standard Inspection -->
+            <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between hover:border-slate-700 transition group shadow-lg">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="p-2.5 rounded-xl bg-slate-800 text-brand-400 group-hover:bg-brand-500 group-hover:text-white transition"><i class="ph ph-binoculars text-xl"></i></div>
+                        <span class="text-[10px] font-mono bg-slate-800 text-slate-400 px-2 py-0.5 rounded">/agent</span>
+                    </div>
+                    <h3 class="font-semibold text-white text-base mb-1">Standard Inspection</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">Run core single-agent inspection against configured database schemas.</p>
+                </div>
+                <button onclick="runAction('/agent', 'Standard Inspection')" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-medium py-2.5 px-4 rounded-xl text-xs transition shadow-md shadow-brand-600/20 flex items-center justify-center space-x-2">
+                    <i class="ph ph-play-circle text-base"></i><span>Run Agent</span>
+                </button>
+            </div>
+
+            <!-- Multi-Agent Workflow -->
+            <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between hover:border-slate-700 transition group shadow-lg">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="p-2.5 rounded-xl bg-slate-800 text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition"><i class="ph ph-users-three text-xl"></i></div>
+                        <span class="text-[10px] font-mono bg-slate-800 text-slate-400 px-2 py-0.5 rounded">/multi-agent</span>
+                    </div>
+                    <h3 class="font-semibold text-white text-base mb-1">Multi-Agent Workflow</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">Execute collaborative multi-agent schema review and critique pipeline.</p>
+                </div>
+                <button onclick="runAction('/multi-agent', 'Multi-Agent Validation')" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-medium py-2.5 px-4 rounded-xl text-xs transition shadow-md shadow-blue-600/20 flex items-center justify-center space-x-2">
+                    <i class="ph ph-play-circle text-base"></i><span>Run Multi-Agent</span>
+                </button>
+            </div>
+
+            <!-- Audited Pipeline -->
+            <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between hover:border-slate-700 transition group shadow-lg">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="p-2.5 rounded-xl bg-slate-800 text-purple-400 group-hover:bg-purple-600 group-hover:text-white transition"><i class="ph ph-shield-check text-xl"></i></div>
+                        <span class="text-[10px] font-mono bg-slate-800 text-slate-400 px-2 py-0.5 rounded">/multi-agent-audited</span>
+                    </div>
+                    <h3 class="font-semibold text-white text-base mb-1">Audited Pipeline</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">Run strict compliance and audit trail generation on active schemas.</p>
+                </div>
+                <button onclick="runAction('/multi-agent-audited', 'Audited Pipeline')" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-medium py-2.5 px-4 rounded-xl text-xs transition shadow-md shadow-purple-600/20 flex items-center justify-center space-x-2">
+                    <i class="ph ph-play-circle text-base"></i><span>Run Audit</span>
+                </button>
+            </div>
+
+            <!-- Self-Healing Audit -->
+            <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between hover:border-slate-700 transition group shadow-lg">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="p-2.5 rounded-xl bg-slate-800 text-amber-400 group-hover:bg-amber-600 group-hover:text-white transition"><i class="ph ph-wrench text-xl"></i></div>
+                        <span class="text-[10px] font-mono bg-slate-800 text-slate-400 px-2 py-0.5 rounded">/multi-agent-healing</span>
+                    </div>
+                    <h3 class="font-semibold text-white text-base mb-1">Self-Healing Audit</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">Detect discrepancies and generate automated healing migration fixes.</p>
+                </div>
+                <button onclick="runAction('/multi-agent-healing', 'Self-Healing Audit')" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-medium py-2.5 px-4 rounded-xl text-xs transition shadow-md shadow-amber-600/20 flex items-center justify-center space-x-2">
+                    <i class="ph ph-play-circle text-base"></i><span>Run Healing</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Secondary Actions & Metadata Toolbar -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div class="bg-slate-900/40 border border-slate-800 rounded-xl p-4 flex items-center justify-between hover:bg-slate-900/80 transition">
+                <div class="flex items-center space-x-3">
+                    <div class="p-2 bg-slate-800 text-slate-300 rounded-lg"><i class="ph ph-database text-lg"></i></div>
+                    <div><h4 class="font-medium text-xs text-white">Extract Metadata</h4><p class="text-[11px] text-slate-400">Analyze current catalog</p></div>
+                </div>
+                <button onclick="runAction('/extract-metadata', 'Metadata Extraction')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg text-xs transition border border-slate-700">Run</button>
+            </div>
+            
+            <div class="bg-slate-900/40 border border-slate-800 rounded-xl p-4 flex items-center justify-between hover:bg-slate-900/80 transition">
+                <div class="flex items-center space-x-3">
+                    <div class="p-2 bg-slate-800 text-slate-300 rounded-lg"><i class="ph ph-git-diff text-lg"></i></div>
+                    <div><h4 class="font-medium text-xs text-white">Extract Alt Metadata</h4><p class="text-[11px] text-slate-400">Analyze alternate config</p></div>
+                </div>
+                <button onclick="runAction('/extract-alt-metadata', 'Alternate Metadata')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg text-xs transition border border-slate-700">Run Alt</button>
+            </div>
+
+            <div class="bg-slate-900/40 border border-slate-800 rounded-xl p-4 flex items-center justify-between hover:bg-slate-900/80 transition">
+                <div class="flex items-center space-x-3">
+                    <div class="p-2 bg-slate-800 text-slate-300 rounded-lg"><i class="ph ph-chart-line-up text-lg"></i></div>
+                    <div><h4 class="font-medium text-xs text-white">Evaluate Performance</h4><p class="text-[11px] text-slate-400">Run benchmark suite</p></div>
+                </div>
+                <button onclick="runAction('/evaluate', 'Evaluation Benchmark')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg text-xs transition border border-slate-700">Evaluate</button>
+            </div>
+        </div>
+
+        <!-- Data & Queries Guide Banner -->
+        <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 mb-6 shadow-xl">
+            <div class="flex items-center space-x-3 mb-2">
+                <div class="p-2 bg-brand-500/10 text-brand-400 rounded-lg"><i class="ph ph-info text-lg"></i></div>
+                <h3 class="font-semibold text-sm text-white">How Data & Queries Work</h3>
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed mb-3">
+                Schema Pilot connects directly to a managed enterprise <strong class="text-slate-200">DuckDB</strong> database instance. Structured models and tables (orders, customers, product catalogs) are indexed via automated metadata pipelines.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs font-mono text-slate-300">
+                <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+                    <span class="text-brand-400 font-bold">1. Data Ingestion:</span> Loaded into local <code class="text-emerald-400">schemapilot.duckdb</code> and mapped via <code class="text-emerald-400">schema_config.yaml</code>.
+                </div>
+                <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+                    <span class="text-blue-400 font-bold">2. Custom Analysis:</span> Use the Payload Console below to pass analytical questions to the AI Agent.
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive "Try It" Payload Console -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 mb-6 shadow-xl">
+            <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center space-x-2">
+                    <i class="ph ph-code text-brand-400 text-lg"></i>
+                    <h3 class="font-semibold text-sm text-white">Interactive "Try It" Payload Console</h3>
+                </div>
+                <span class="text-[11px] text-slate-400">Test endpoints with custom questions or JSON parameters</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                <div>
+                    <label class="block text-[11px] font-medium text-slate-400 mb-1">Select Endpoint</label>
+                    <select id="custom-endpoint" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-brand-500">
+                        <option value="/agent">POST /agent (Dynamic Analyst)</option>
+                        <option value="/multi-agent">POST /multi-agent (Multi-Agent)</option>
+                        <option value="/multi-agent-audited">POST /multi-agent-audited (Audit)</option>
+                        <option value="/multi-agent-healing">POST /multi-agent-healing (Healing)</option>
+                        <option value="/extract-metadata">POST /extract-metadata</option>
+                        <option value="/extract-alt-metadata">POST /extract-alt-metadata</option>
+                        <option value="/evaluate">POST /evaluate</option>
+                    </select>
+                </div>
+                <div class="md:col-span-2">
+                    <label class="block text-[11px] font-medium text-slate-400 mb-1">Custom JSON Payload (Ask any question)</label>
+                    <input type="text" id="custom-payload" value='{"parameters": {"question": "What are our total sales by product category?"}}' class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs font-mono text-emerald-400 focus:outline-none focus:border-brand-500">
+                </div>
+                <div>
+                    <label class="block text-[11px] font-medium text-slate-400 mb-1">&nbsp;</label>
+                    <button onclick="runCustomPayload()" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-medium py-2 px-4 rounded-xl text-xs transition shadow-md shadow-brand-600/20 flex items-center justify-center space-x-2">
+                        <i class="ph ph-paper-plane-tilt"></i>
+                        <span>Send Custom Request</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terminal Output Panel -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+            <div class="px-5 py-3.5 border-b border-slate-800 flex items-center justify-between bg-slate-950/60">
+                <div class="flex items-center space-x-3">
+                    <div class="flex space-x-1.5">
+                        <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                    </div>
+                    <span class="text-xs font-mono text-slate-400 pl-2 border-l border-slate-800" id="result-title">output.log — Ready</span>
+                </div>
+                
+                <div class="flex items-center space-x-3">
+                    <button onclick="copyOutput()" class="text-xs text-slate-400 hover:text-white transition flex items-center space-x-1 bg-slate-800/50 hover:bg-slate-800 px-2.5 py-1 rounded border border-slate-700">
+                        <i class="ph ph-copy"></i>
+                        <span>Copy JSON</span>
+                    </button>
+                    <button onclick="clearOutput()" class="text-xs text-slate-400 hover:text-slate-200 transition">Clear</button>
+                </div>
+            </div>
+
+            <div class="p-5 relative bg-slate-950">
+                <div id="loading-spinner" class="hidden flex items-center justify-center py-16">
+                    <div class="animate-spin rounded-full h-8 w-8 border-2 border-brand-500 border-t-transparent"></div>
+                    <span class="ml-3 text-xs font-mono text-slate-400">Executing agent workflow on DuckDB cluster...</span>
+                </div>
+                <pre id="output-box" class="font-mono text-xs text-emerald-400 bg-slate-950 p-2 overflow-x-auto max-h-[500px] whitespace-pre-wrap leading-relaxed">System initialized successfully. Select any action card above or use the Custom Payload Console to test custom queries.</pre>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-900 bg-slate-950 py-4 mt-12 text-center text-xs text-slate-500">
+        <p>Schema Pilot &copy; 2026 &bull; Enterprise Autonomous Schema Operations</p>
+    </footer>
+
+    <!-- Script Logic -->
+    <script>
+        async function checkHealth() {
+            const badge = document.getElementById('health-badge');
+            const dot = document.getElementById('health-dot');
+            const text = document.getElementById('health-text');
+            try {
+                const res = await fetch('/health');
+                if (res.ok) {
+                    dot.className = 'w-2 h-2 mr-2 rounded-full bg-brand-500';
+                    text.innerText = 'System Online';
+                    badge.className = 'inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-brand-500/10 text-brand-400 border border-brand-500/20 shadow-sm';
+                } else {
+                    throw new Error();
+                }
+            } catch (err) {
+                dot.className = 'w-2 h-2 mr-2 rounded-full bg-red-500';
+                text.innerText = 'API Offline';
+                badge.className = 'inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-red-500/10 text-red-400 border border-red-500/20 shadow-sm';
+            }
+        }
+        checkHealth();
+
+        async function runAction(endpoint, actionName) {
+            const outputBox = document.getElementById('output-box');
+            const spinner = document.getElementById('loading-spinner');
+            const resultTitle = document.getElementById('result-title');
+
+            resultTitle.innerText = `${actionName} (${endpoint}) — Running...`;
+            outputBox.classList.add('hidden');
+            spinner.classList.remove('hidden');
+
+            const startTime = performance.now();
+
+            try {
+                const response = await fetch(endpoint, { method: 'POST' });
+                const json = await response.json();
+                renderOutput(json);
+
+                const duration = Math.round(performance.now() - startTime);
+                document.getElementById('latency-metric').innerText = `${duration}ms`;
+                resultTitle.innerText = `${actionName} (${endpoint}) — Completed (${duration}ms)`;
+            } catch (err) {
+                outputBox.classList.remove('hidden');
+                outputBox.className = 'font-mono text-xs text-red-400 bg-slate-950 p-2 overflow-x-auto max-h-[500px] whitespace-pre-wrap leading-relaxed';
+                outputBox.innerText = `Error executing ${actionName}:\n${err.message}`;
+                resultTitle.innerText = `${actionName} — Failed`;
+                outputBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } finally {
+                spinner.classList.add('hidden');
+            }
+        }
+
+        async function runCustomPayload() {
+            const endpoint = document.getElementById('custom-endpoint').value;
+            const rawInput = document.getElementById('custom-payload').value;
+            const outputBox = document.getElementById('output-box');
+            const spinner = document.getElementById('loading-spinner');
+            const resultTitle = document.getElementById('result-title');
+
+            let payloadObj = {};
+            try {
+                if (rawInput.trim()) {
+                    payloadObj = JSON.parse(rawInput);
+                }
+            } catch (e) {
+                alert('Invalid JSON in custom payload field!');
+                return;
+            }
+
+            resultTitle.innerText = `Custom Request (${endpoint}) — Running...`;
+            outputBox.classList.add('hidden');
+            spinner.classList.remove('hidden');
+
+            const startTime = performance.now();
+
+            try {
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payloadObj)
+                });
+                const json = await response.json();
+                renderOutput(json);
+
+                const duration = Math.round(performance.now() - startTime);
+                document.getElementById('latency-metric').innerText = `${duration}ms`;
+                resultTitle.innerText = `Custom Request (${endpoint}) — Completed (${duration}ms)`;
+            } catch (err) {
+                outputBox.classList.remove('hidden');
+                outputBox.className = 'font-mono text-xs text-red-400 bg-slate-950 p-2 overflow-x-auto max-h-[500px] whitespace-pre-wrap leading-relaxed';
+                outputBox.innerText = `Error executing custom request:\n${err.message}`;
+                outputBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } finally {
+                spinner.classList.add('hidden');
+            }
+        }
+
+        function renderOutput(data) {
+            const outputBox = document.getElementById('output-box');
+            outputBox.classList.remove('hidden');
+            outputBox.className = 'font-mono text-xs text-emerald-400 bg-slate-950 p-2 overflow-x-auto max-h-[500px] whitespace-pre-wrap leading-relaxed';
+            outputBox.innerText = JSON.stringify(data, null, 2);
+            outputBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function clearOutput() {
+            const outputBox = document.getElementById('output-box');
+            outputBox.innerText = 'Output cleared.';
+            document.getElementById('result-title').innerText = 'output.log — Ready';
+        }
+
+        function copyOutput() {
+            const outputBox = document.getElementById('output-box');
+            navigator.clipboard.writeText(outputBox.innerText);
+            alert('Output copied to clipboard!');
+        }
+    </script>
+</body>
+</html>

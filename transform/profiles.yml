@@ -1,0 +1,7 @@
+schemapilot:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: '../schemapilot.duckdb'
+      threads: 4

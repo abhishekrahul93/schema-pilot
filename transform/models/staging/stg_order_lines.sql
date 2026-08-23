@@ -1,0 +1,10 @@
+with source as (
+    select * from {{ source('raw', 'raw_order_lines') }}
+)
+select
+    line_id,
+    order_id,
+    product_id,
+    coalesce(quantity, 1) as quantity
+from source
+where line_id is not null and order_id is not null

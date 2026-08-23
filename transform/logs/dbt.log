@@ -1,0 +1,1609 @@
+[0m17:18:04.615332 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BAF11ADA90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BAF11AF850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BAF5BD8CD0>]}
+
+
+============================== 17:18:04.624414 | bc83c451-d367-417f-b414-5d7179a62d74 ==============================
+[0m17:18:04.624414 [info ] [MainThread]: Running with dbt=1.12.0
+[0m17:18:04.627419 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'use_colors': 'True', 'hints_enabled': 'True', 'invocation_command': 'dbt run --profiles-dir .', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'logs'}
+[0m17:18:04.629415 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\lenovo\schema-pilot\backend\transform\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m17:18:04.631425 [debug] [MainThread]: Command `dbt run` failed at 17:18:04.631425 after 0.18 seconds
+[0m17:18:04.632421 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BAEDC94C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BAF5BDA090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BAF5CA7ED0>]}
+[0m17:18:04.633423 [debug] [MainThread]: Flushing usage events
+[0m17:18:06.511790 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:19:29.677607 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002BDCCD4D350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002BDCCD34690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002BDCBC0C510>]}
+
+
+============================== 17:19:29.684799 | 8fed9768-c0e6-4e1d-ba24-7732e579ba53 ==============================
+[0m17:19:29.684799 [info ] [MainThread]: Running with dbt=1.12.0
+[0m17:19:29.686837 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run --profiles-dir .', 'log_path': 'C:\\Users\\lenovo\\schema-pilot\\backend\\transform\\logs'}
+[0m17:19:29.689865 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  Could not find profile named 'schemapilot'
+[0m17:19:29.691929 [debug] [MainThread]: Command `dbt run` failed at 17:19:29.691929 after 0.17 seconds
+[0m17:19:29.692883 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002BDCBBED150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002BDCCC96750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002BDCCC97E90>]}
+[0m17:19:29.693850 [debug] [MainThread]: Flushing usage events
+[0m17:19:30.768940 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:20:19.514652 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025B34308610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025B343BAB50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025B343C74D0>]}
+
+
+============================== 17:20:19.522650 | 7a4764e0-f067-47ed-a422-ab8ac9e431b9 ==============================
+[0m17:20:19.522650 [info ] [MainThread]: Running with dbt=1.12.0
+[0m17:20:19.523653 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'static_parser': 'True', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'invocation_command': 'dbt run --profiles-dir .', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'C:\\Users\\lenovo\\schema-pilot\\backend\\transform\\logs'}
+[0m17:20:20.209680 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7a4764e0-f067-47ed-a422-ab8ac9e431b9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025B34415C10>]}
+[0m17:20:20.295284 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7a4764e0-f067-47ed-a422-ab8ac9e431b9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025B2F8E45D0>]}
+[0m17:20:20.302108 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m17:20:21.048395 [debug] [MainThread]: checksum: af1b9a16e5fbd0a87b179edfcb45ae93a86d633786f5568376090087e3997081, vars: {}, profile: schemapilot, target: dev, version: 1.12.0
+[0m17:20:21.050980 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m17:20:21.053019 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '7a4764e0-f067-47ed-a422-ab8ac9e431b9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025B342EF990>]}
+[0m17:20:24.240448 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.schemapilot_transform.staging
+- models.schemapilot_transform.marts
+[0m17:20:24.247643 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7a4764e0-f067-47ed-a422-ab8ac9e431b9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025B3494DE90>]}
+[0m17:20:24.328210 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\manifest.json
+[0m17:20:24.335790 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\semantic_manifest.json
+[0m17:20:24.417627 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\lenovo\schema-pilot\backend\transform\target\osi_document.json
+[0m17:20:24.451542 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7a4764e0-f067-47ed-a422-ab8ac9e431b9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025B34673310>]}
+[0m17:20:24.453722 [info ] [MainThread]: Found 486 macros
+[0m17:20:24.454757 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7a4764e0-f067-47ed-a422-ab8ac9e431b9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025B3479E390>]}
+[0m17:20:24.456752 [warn ] [MainThread]: [[33mWARNING[0m]: Nothing to do. Try checking your model configs and model specification args
+[0m17:20:24.458761 [debug] [MainThread]: Command end result
+[0m17:20:24.509793 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\manifest.json
+[0m17:20:24.515787 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\semantic_manifest.json
+[0m17:20:24.520794 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\lenovo\schema-pilot\backend\transform\target\osi_document.json
+[0m17:20:24.526787 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\lenovo\schema-pilot\backend\transform\target\run_results.json
+[0m17:20:24.527791 [debug] [MainThread]: Command `dbt run` succeeded at 17:20:24.527791 after 5.16 seconds
+[0m17:20:24.528788 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025B2C404C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025B343A7510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025B343C7C90>]}
+[0m17:20:24.529788 [debug] [MainThread]: Flushing usage events
+[0m17:20:25.779368 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:21:40.502906 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019071A02F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019071926610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019071926950>]}
+
+
+============================== 17:21:40.509910 | cffd05b9-af6a-4cdd-bb8c-6e8062cbd349 ==============================
+[0m17:21:40.509910 [info ] [MainThread]: Running with dbt=1.12.0
+[0m17:21:40.511903 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run --profiles-dir .', 'log_path': 'C:\\Users\\lenovo\\schema-pilot\\backend\\transform\\logs'}
+[0m17:21:40.900459 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'cffd05b9-af6a-4cdd-bb8c-6e8062cbd349', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019071A3FC90>]}
+[0m17:21:40.996737 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'cffd05b9-af6a-4cdd-bb8c-6e8062cbd349', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001906CE44710>]}
+[0m17:21:41.001737 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m17:21:41.383826 [debug] [MainThread]: checksum: af1b9a16e5fbd0a87b179edfcb45ae93a86d633786f5568376090087e3997081, vars: {}, profile: schemapilot, target: dev, version: 1.12.0
+[0m17:21:41.633616 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 2 files added, 0 files changed.
+[0m17:21:41.634618 [debug] [MainThread]: Partial parsing: added file: schemapilot_transform://models\staging\stg_customers.sql
+[0m17:21:41.635629 [debug] [MainThread]: Partial parsing: added file: schemapilot_transform://models\staging\schema.yml
+[0m17:21:42.194865 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.schemapilot_transform.marts
+[0m17:21:42.199896 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'cffd05b9-af6a-4cdd-bb8c-6e8062cbd349', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001907246A050>]}
+[0m17:21:42.347138 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\manifest.json
+[0m17:21:42.352955 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\semantic_manifest.json
+[0m17:21:42.409778 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\lenovo\schema-pilot\backend\transform\target\osi_document.json
+[0m17:21:42.434786 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'cffd05b9-af6a-4cdd-bb8c-6e8062cbd349', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000190724AC7D0>]}
+[0m17:21:42.435783 [info ] [MainThread]: Found 1 model, 4 sources, 486 macros
+[0m17:21:42.436786 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cffd05b9-af6a-4cdd-bb8c-6e8062cbd349', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001907247C750>]}
+[0m17:21:42.440789 [info ] [MainThread]: 
+[0m17:21:42.442780 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:21:42.443794 [info ] [MainThread]: 
+[0m17:21:42.444779 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m17:21:42.447079 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_schemapilot'
+[0m17:21:47.410479 [debug] [ThreadPool]: Using duckdb connection "list_schemapilot"
+[0m17:21:47.411317 [debug] [ThreadPool]: On list_schemapilot: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "list_schemapilot"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"schemapilot"'
+    
+  
+  
+[0m17:21:47.411317 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:21:47.514871 [debug] [ThreadPool]: SQL status: OK in 0.103 seconds
+[0m17:21:47.518850 [debug] [ThreadPool]: On list_schemapilot: Close
+[0m17:21:47.521044 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_schemapilot, now create_schemapilot_main)
+[0m17:21:47.522858 [debug] [ThreadPool]: Creating schema "database: "schemapilot"
+schema: "main"
+"
+[0m17:21:47.530218 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:21:47.531254 [debug] [ThreadPool]: On create_schemapilot_main: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "create_schemapilot_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='schemapilot'
+        and type='sqlite'
+    
+  
+[0m17:21:47.532207 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:21:47.535316 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m17:21:47.537330 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:21:47.538328 [debug] [ThreadPool]: On create_schemapilot_main: BEGIN
+[0m17:21:47.541328 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m17:21:47.542341 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:21:47.542341 [debug] [ThreadPool]: On create_schemapilot_main: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "create_schemapilot_main"} */
+
+    
+    
+        create schema if not exists "schemapilot"."main"
+    
+[0m17:21:47.546171 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m17:21:47.547313 [debug] [ThreadPool]: On create_schemapilot_main: COMMIT
+[0m17:21:47.548184 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:21:47.549176 [debug] [ThreadPool]: On create_schemapilot_main: COMMIT
+[0m17:21:47.550268 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:21:47.551173 [debug] [ThreadPool]: On create_schemapilot_main: Close
+[0m17:21:47.553248 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_schemapilot_main'
+[0m17:21:47.560172 [debug] [ThreadPool]: Using duckdb connection "list_schemapilot_main"
+[0m17:21:47.560172 [debug] [ThreadPool]: On list_schemapilot_main: BEGIN
+[0m17:21:47.561185 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:21:47.562245 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m17:21:47.563180 [debug] [ThreadPool]: Using duckdb connection "list_schemapilot_main"
+[0m17:21:47.563180 [debug] [ThreadPool]: On list_schemapilot_main: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "list_schemapilot_main"} */
+select
+      'schemapilot' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'schemapilot'
+  
+[0m17:21:47.580551 [debug] [ThreadPool]: SQL status: OK in 0.016 seconds
+[0m17:21:47.584520 [debug] [ThreadPool]: On list_schemapilot_main: ROLLBACK
+[0m17:21:47.587518 [debug] [ThreadPool]: Failed to rollback 'list_schemapilot_main'
+[0m17:21:47.587518 [debug] [ThreadPool]: On list_schemapilot_main: Close
+[0m17:21:47.590524 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cffd05b9-af6a-4cdd-bb8c-6e8062cbd349', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000190721A9B50>]}
+[0m17:21:47.591521 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:21:47.592724 [debug] [MainThread]: On master: BEGIN
+[0m17:21:47.593525 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:21:47.594701 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m17:21:47.595517 [debug] [MainThread]: On master: COMMIT
+[0m17:21:47.595517 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:21:47.596514 [debug] [MainThread]: On master: COMMIT
+[0m17:21:47.597517 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:21:47.597517 [debug] [MainThread]: On master: Close
+[0m17:21:47.649744 [debug] [Thread-1 (]: Began running node model.schemapilot_transform.stg_customers
+[0m17:21:47.650748 [info ] [Thread-1 (]: 1 of 1 START sql view model main.stg_customers ................................. [RUN]
+[0m17:21:47.651748 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.schemapilot_transform.stg_customers'
+[0m17:21:47.652749 [debug] [Thread-1 (]: Began compiling node model.schemapilot_transform.stg_customers
+[0m17:21:47.662375 [debug] [Thread-1 (]: Writing injected SQL for node "model.schemapilot_transform.stg_customers"
+[0m17:21:47.668842 [debug] [Thread-1 (]: Began executing node model.schemapilot_transform.stg_customers
+[0m17:21:47.713306 [debug] [Thread-1 (]: Writing runtime sql for node "model.schemapilot_transform.stg_customers"
+[0m17:21:47.719127 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:21:47.720120 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: BEGIN
+[0m17:21:47.721120 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m17:21:47.723212 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m17:21:47.725134 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:21:47.726125 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_customers"} */
+
+  
+  create view "schemapilot"."main"."stg_customers__dbt_tmp" as (
+    with source as (
+    select * from "main"."main"."raw_customers"
+),
+
+cleaned as (
+    select
+        customer_id,
+        trim(name) as customer_name,
+        case 
+            when email is null or trim(email) = '' then 'unknown@placeholder.com'
+            else lower(trim(email))
+        end as email,
+        case 
+            when upper(trim(country)) in ('USA', 'UNITED STATES') then 'United States'
+            when country is null or trim(country) = '' then 'Unknown'
+            else initcap(trim(country))
+        end as country,
+        try_cast(signup_date as date) as signup_date
+    from source
+    where customer_id is not null
+),
+
+deduped as (
+    select *,
+           row_number() over (partition by customer_id order by signup_date desc) as rn
+    from cleaned
+)
+
+select 
+    customer_id,
+    customer_name,
+    email,
+    country,
+    signup_date
+from deduped
+where rn = 1
+  );
+
+[0m17:21:47.740299 [debug] [Thread-1 (]: DuckDB adapter: duckdb error: Binder Error: Catalog "main" does not exist!
+[0m17:21:47.741345 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_customers"} */
+
+  
+  create view "schemapilot"."main"."stg_customers__dbt_tmp" as (
+    with source as (
+    select * from "main"."main"."raw_customers"
+),
+
+cleaned as (
+    select
+        customer_id,
+        trim(name) as customer_name,
+        case 
+            when email is null or trim(email) = '' then 'unknown@placeholder.com'
+            else lower(trim(email))
+        end as email,
+        case 
+            when upper(trim(country)) in ('USA', 'UNITED STATES') then 'United States'
+            when country is null or trim(country) = '' then 'Unknown'
+            else initcap(trim(country))
+        end as country,
+        try_cast(signup_date as date) as signup_date
+    from source
+    where customer_id is not null
+),
+
+deduped as (
+    select *,
+           row_number() over (partition by customer_id order by signup_date desc) as rn
+    from cleaned
+)
+
+select 
+    customer_id,
+    customer_name,
+    email,
+    country,
+    signup_date
+from deduped
+where rn = 1
+  );
+
+[0m17:21:47.742292 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m17:21:47.743293 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: ROLLBACK
+[0m17:21:47.746437 [debug] [Thread-1 (]: Failed to rollback 'model.schemapilot_transform.stg_customers'
+[0m17:21:47.747467 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: Close
+[0m17:21:47.780617 [debug] [Thread-1 (]: Runtime Error in model stg_customers (models\staging\stg_customers.sql)
+  Binder Error: Catalog "main" does not exist!
+[0m17:21:47.783671 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cffd05b9-af6a-4cdd-bb8c-6e8062cbd349', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019072816210>]}
+[0m17:21:47.784656 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model main.stg_customers ........................ [[31mERROR[0m in 0.13s]
+[0m17:21:47.786658 [debug] [Thread-1 (]: Finished running node model.schemapilot_transform.stg_customers
+[0m17:21:47.787660 [debug] [Thread-7 (]: Marking all children of 'model.schemapilot_transform.stg_customers' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_customers (models\staging\stg_customers.sql)
+  Binder Error: Catalog "main" does not exist!.
+[0m17:21:47.792654 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:21:47.793652 [debug] [MainThread]: On master: BEGIN
+[0m17:21:47.794685 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:21:47.795652 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m17:21:47.796655 [debug] [MainThread]: On master: COMMIT
+[0m17:21:47.797659 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:21:47.798658 [debug] [MainThread]: On master: COMMIT
+[0m17:21:47.799655 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m17:21:47.800652 [debug] [MainThread]: On master: Close
+[0m17:21:47.801653 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:21:47.802655 [debug] [MainThread]: Connection 'create_schemapilot_main' was properly closed.
+[0m17:21:47.802655 [debug] [MainThread]: Connection 'list_schemapilot_main' was properly closed.
+[0m17:21:47.803658 [debug] [MainThread]: Connection 'model.schemapilot_transform.stg_customers' was properly closed.
+[0m17:21:47.804653 [info ] [MainThread]: 
+[0m17:21:47.805652 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 5.36 seconds (5.36s).
+[0m17:21:47.807661 [debug] [MainThread]: Command end result
+[0m17:21:47.861467 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\manifest.json
+[0m17:21:47.867732 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\semantic_manifest.json
+[0m17:21:47.876258 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\lenovo\schema-pilot\backend\transform\target\osi_document.json
+[0m17:21:47.887290 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\lenovo\schema-pilot\backend\transform\target\run_results.json
+[0m17:21:47.888298 [info ] [MainThread]: 
+[0m17:21:47.890279 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m17:21:47.891280 [info ] [MainThread]: 
+[0m17:21:47.893279 [error] [MainThread]: [[31mERROR[0m]: in model stg_customers (models\staging\stg_customers.sql)
+[0m17:21:47.894285 [error] [MainThread]:   Runtime Error in model stg_customers (models\staging\stg_customers.sql)
+  Binder Error: Catalog "main" does not exist!
+[0m17:21:47.895277 [info ] [MainThread]: 
+[0m17:21:47.897290 [info ] [MainThread]:   compiled code at target\compiled\schemapilot_transform\models\staging\stg_customers.sql
+[0m17:21:47.898273 [info ] [MainThread]: 
+[0m17:21:47.900284 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=1
+[0m17:21:47.902277 [debug] [MainThread]: Command `dbt run` failed at 17:21:47.901278 after 7.56 seconds
+[0m17:21:47.903276 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019069984C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001907184FDD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001906F19AC50>]}
+[0m17:21:47.903276 [debug] [MainThread]: Flushing usage events
+[0m17:21:49.314879 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:23:20.515208 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C3ABDFF90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C3ABFC750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C3ACB7010>]}
+
+
+============================== 17:23:20.526461 | 345dad62-be37-4b9a-8b47-1b5e9fbd15c0 ==============================
+[0m17:23:20.526461 [info ] [MainThread]: Running with dbt=1.12.0
+[0m17:23:20.536459 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'invocation_command': 'dbt run --profiles-dir .', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'C:\\Users\\lenovo\\schema-pilot\\backend\\transform\\logs'}
+[0m17:23:22.081489 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '345dad62-be37-4b9a-8b47-1b5e9fbd15c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C3AD4EC90>]}
+[0m17:23:22.345075 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '345dad62-be37-4b9a-8b47-1b5e9fbd15c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C361E47D0>]}
+[0m17:23:22.358072 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m17:23:23.185633 [debug] [MainThread]: checksum: af1b9a16e5fbd0a87b179edfcb45ae93a86d633786f5568376090087e3997081, vars: {}, profile: schemapilot, target: dev, version: 1.12.0
+[0m17:23:24.252385 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m17:23:24.254577 [debug] [MainThread]: Partial parsing: updated file: schemapilot_transform://models\staging\schema.yml
+[0m17:23:25.817517 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.schemapilot_transform.marts
+[0m17:23:25.833518 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '345dad62-be37-4b9a-8b47-1b5e9fbd15c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C3894E2D0>]}
+[0m17:23:26.102881 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\manifest.json
+[0m17:23:26.116913 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\semantic_manifest.json
+[0m17:23:26.273605 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\lenovo\schema-pilot\backend\transform\target\osi_document.json
+[0m17:23:26.318427 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '345dad62-be37-4b9a-8b47-1b5e9fbd15c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C3B7ACF10>]}
+[0m17:23:26.320436 [info ] [MainThread]: Found 1 model, 4 sources, 486 macros
+[0m17:23:26.322424 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '345dad62-be37-4b9a-8b47-1b5e9fbd15c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C3B5A9C90>]}
+[0m17:23:26.327431 [info ] [MainThread]: 
+[0m17:23:26.329488 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:23:26.332428 [info ] [MainThread]: 
+[0m17:23:26.335427 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m17:23:26.340423 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_schemapilot'
+[0m17:23:26.633108 [debug] [ThreadPool]: Using duckdb connection "list_schemapilot"
+[0m17:23:26.634115 [debug] [ThreadPool]: On list_schemapilot: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "list_schemapilot"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"schemapilot"'
+    
+  
+  
+[0m17:23:26.636118 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:23:26.821721 [debug] [ThreadPool]: SQL status: OK in 0.186 seconds
+[0m17:23:26.830729 [debug] [ThreadPool]: On list_schemapilot: Close
+[0m17:23:26.833727 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_schemapilot, now create_schemapilot_main)
+[0m17:23:26.836721 [debug] [ThreadPool]: Creating schema "database: "schemapilot"
+schema: "main"
+"
+[0m17:23:26.858909 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:23:26.860953 [debug] [ThreadPool]: On create_schemapilot_main: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "create_schemapilot_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='schemapilot'
+        and type='sqlite'
+    
+  
+[0m17:23:26.862946 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:23:26.869953 [debug] [ThreadPool]: SQL status: OK in 0.008 seconds
+[0m17:23:26.874951 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:23:26.875947 [debug] [ThreadPool]: On create_schemapilot_main: BEGIN
+[0m17:23:26.878949 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m17:23:26.879950 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:23:26.881958 [debug] [ThreadPool]: On create_schemapilot_main: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "create_schemapilot_main"} */
+
+    
+    
+        create schema if not exists "schemapilot"."main"
+    
+[0m17:23:26.891973 [debug] [ThreadPool]: SQL status: OK in 0.009 seconds
+[0m17:23:26.894975 [debug] [ThreadPool]: On create_schemapilot_main: COMMIT
+[0m17:23:26.895972 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:23:26.897973 [debug] [ThreadPool]: On create_schemapilot_main: COMMIT
+[0m17:23:26.899518 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m17:23:26.901708 [debug] [ThreadPool]: On create_schemapilot_main: Close
+[0m17:23:26.910749 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_schemapilot_main'
+[0m17:23:26.922738 [debug] [ThreadPool]: Using duckdb connection "list_schemapilot_main"
+[0m17:23:26.923744 [debug] [ThreadPool]: On list_schemapilot_main: BEGIN
+[0m17:23:26.925742 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:23:26.927747 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m17:23:26.930748 [debug] [ThreadPool]: Using duckdb connection "list_schemapilot_main"
+[0m17:23:26.932751 [debug] [ThreadPool]: On list_schemapilot_main: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "list_schemapilot_main"} */
+select
+      'schemapilot' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'schemapilot'
+  
+[0m17:23:27.024778 [debug] [ThreadPool]: SQL status: OK in 0.088 seconds
+[0m17:23:27.030010 [debug] [ThreadPool]: On list_schemapilot_main: ROLLBACK
+[0m17:23:27.038006 [debug] [ThreadPool]: Failed to rollback 'list_schemapilot_main'
+[0m17:23:27.039005 [debug] [ThreadPool]: On list_schemapilot_main: Close
+[0m17:23:27.043002 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '345dad62-be37-4b9a-8b47-1b5e9fbd15c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C3B532B10>]}
+[0m17:23:27.044007 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:23:27.045001 [debug] [MainThread]: On master: BEGIN
+[0m17:23:27.047002 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:23:27.049008 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m17:23:27.050010 [debug] [MainThread]: On master: COMMIT
+[0m17:23:27.052004 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:23:27.053003 [debug] [MainThread]: On master: COMMIT
+[0m17:23:27.054002 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m17:23:27.056021 [debug] [MainThread]: On master: Close
+[0m17:23:27.115805 [debug] [Thread-1 (]: Began running node model.schemapilot_transform.stg_customers
+[0m17:23:27.117555 [info ] [Thread-1 (]: 1 of 1 START sql view model main.stg_customers ................................. [RUN]
+[0m17:23:27.121124 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.schemapilot_transform.stg_customers'
+[0m17:23:27.122149 [debug] [Thread-1 (]: Began compiling node model.schemapilot_transform.stg_customers
+[0m17:23:27.136298 [debug] [Thread-1 (]: Writing injected SQL for node "model.schemapilot_transform.stg_customers"
+[0m17:23:27.138329 [debug] [Thread-1 (]: Began executing node model.schemapilot_transform.stg_customers
+[0m17:23:27.221056 [debug] [Thread-1 (]: Writing runtime sql for node "model.schemapilot_transform.stg_customers"
+[0m17:23:27.243982 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:23:27.248994 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: BEGIN
+[0m17:23:27.250174 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m17:23:27.252938 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m17:23:27.254606 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:23:27.256153 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_customers"} */
+
+  
+  create view "schemapilot"."main"."stg_customers__dbt_tmp" as (
+    with source as (
+    select * from "schemapilot"."main"."raw_customers"
+),
+
+cleaned as (
+    select
+        customer_id,
+        trim(name) as customer_name,
+        case 
+            when email is null or trim(email) = '' then 'unknown@placeholder.com'
+            else lower(trim(email))
+        end as email,
+        case 
+            when upper(trim(country)) in ('USA', 'UNITED STATES') then 'United States'
+            when country is null or trim(country) = '' then 'Unknown'
+            else initcap(trim(country))
+        end as country,
+        try_cast(signup_date as date) as signup_date
+    from source
+    where customer_id is not null
+),
+
+deduped as (
+    select *,
+           row_number() over (partition by customer_id order by signup_date desc) as rn
+    from cleaned
+)
+
+select 
+    customer_id,
+    customer_name,
+    email,
+    country,
+    signup_date
+from deduped
+where rn = 1
+  );
+
+[0m17:23:27.336961 [debug] [Thread-1 (]: DuckDB adapter: duckdb error: Catalog Error: Scalar Function with name initcap does not exist!
+Did you mean "ilike_escape"?
+
+LINE 20:             else initcap(trim(country))
+                          ^
+[0m17:23:27.339071 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_customers"} */
+
+  
+  create view "schemapilot"."main"."stg_customers__dbt_tmp" as (
+    with source as (
+    select * from "schemapilot"."main"."raw_customers"
+),
+
+cleaned as (
+    select
+        customer_id,
+        trim(name) as customer_name,
+        case 
+            when email is null or trim(email) = '' then 'unknown@placeholder.com'
+            else lower(trim(email))
+        end as email,
+        case 
+            when upper(trim(country)) in ('USA', 'UNITED STATES') then 'United States'
+            when country is null or trim(country) = '' then 'Unknown'
+            else initcap(trim(country))
+        end as country,
+        try_cast(signup_date as date) as signup_date
+    from source
+    where customer_id is not null
+),
+
+deduped as (
+    select *,
+           row_number() over (partition by customer_id order by signup_date desc) as rn
+    from cleaned
+)
+
+select 
+    customer_id,
+    customer_name,
+    email,
+    country,
+    signup_date
+from deduped
+where rn = 1
+  );
+
+[0m17:23:27.340623 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m17:23:27.341621 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: ROLLBACK
+[0m17:23:27.351613 [debug] [Thread-1 (]: Failed to rollback 'model.schemapilot_transform.stg_customers'
+[0m17:23:27.352622 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: Close
+[0m17:23:27.378877 [debug] [Thread-1 (]: Runtime Error in model stg_customers (models\staging\stg_customers.sql)
+  Catalog Error: Scalar Function with name initcap does not exist!
+  Did you mean "ilike_escape"?
+  
+  LINE 20:             else initcap(trim(country))
+                            ^
+[0m17:23:27.385392 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '345dad62-be37-4b9a-8b47-1b5e9fbd15c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C3BB34390>]}
+[0m17:23:27.387046 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model main.stg_customers ........................ [[31mERROR[0m in 0.26s]
+[0m17:23:27.399912 [debug] [Thread-1 (]: Finished running node model.schemapilot_transform.stg_customers
+[0m17:23:27.402915 [debug] [Thread-7 (]: Marking all children of 'model.schemapilot_transform.stg_customers' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_customers (models\staging\stg_customers.sql)
+  Catalog Error: Scalar Function with name initcap does not exist!
+  Did you mean "ilike_escape"?
+  
+  LINE 20:             else initcap(trim(country))
+                            ^.
+[0m17:23:27.408176 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:23:27.411174 [debug] [MainThread]: On master: BEGIN
+[0m17:23:27.417179 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:23:27.421180 [debug] [MainThread]: SQL status: OK in 0.004 seconds
+[0m17:23:27.422179 [debug] [MainThread]: On master: COMMIT
+[0m17:23:27.423180 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:23:27.425177 [debug] [MainThread]: On master: COMMIT
+[0m17:23:27.427175 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m17:23:27.431183 [debug] [MainThread]: On master: Close
+[0m17:23:27.433168 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:23:27.434171 [debug] [MainThread]: Connection 'create_schemapilot_main' was properly closed.
+[0m17:23:27.436171 [debug] [MainThread]: Connection 'list_schemapilot_main' was properly closed.
+[0m17:23:27.437180 [debug] [MainThread]: Connection 'model.schemapilot_transform.stg_customers' was properly closed.
+[0m17:23:27.439176 [info ] [MainThread]: 
+[0m17:23:27.443176 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.10 seconds (1.10s).
+[0m17:23:27.453474 [debug] [MainThread]: Command end result
+[0m17:23:27.567520 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\manifest.json
+[0m17:23:27.575786 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\semantic_manifest.json
+[0m17:23:27.586816 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\lenovo\schema-pilot\backend\transform\target\osi_document.json
+[0m17:23:27.601372 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\lenovo\schema-pilot\backend\transform\target\run_results.json
+[0m17:23:27.603369 [info ] [MainThread]: 
+[0m17:23:27.624595 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m17:23:27.626595 [info ] [MainThread]: 
+[0m17:23:27.629591 [error] [MainThread]: [[31mERROR[0m]: in model stg_customers (models\staging\stg_customers.sql)
+[0m17:23:27.633598 [error] [MainThread]:   Runtime Error in model stg_customers (models\staging\stg_customers.sql)
+  Catalog Error: Scalar Function with name initcap does not exist!
+  Did you mean "ilike_escape"?
+  
+  LINE 20:             else initcap(trim(country))
+                            ^
+[0m17:23:27.635599 [info ] [MainThread]: 
+[0m17:23:27.637600 [info ] [MainThread]:   compiled code at target\compiled\schemapilot_transform\models\staging\stg_customers.sql
+[0m17:23:27.639604 [info ] [MainThread]: 
+[0m17:23:27.641600 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=1
+[0m17:23:27.657852 [debug] [MainThread]: Command `dbt run` failed at 17:23:27.656806 after 7.57 seconds
+[0m17:23:27.658859 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C361CF950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C3B670510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C3B5A9C90>]}
+[0m17:23:27.659854 [debug] [MainThread]: Flushing usage events
+[0m17:23:29.135658 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:24:11.554113 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F2B7D13590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F2B7D107D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F2B7D42FD0>]}
+
+
+============================== 17:24:11.562501 | d78a427a-3396-4116-86a7-bad084b2ccc4 ==============================
+[0m17:24:11.562501 [info ] [MainThread]: Running with dbt=1.12.0
+[0m17:24:11.564520 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'target_path': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run --profiles-dir .', 'log_path': 'C:\\Users\\lenovo\\schema-pilot\\backend\\transform\\logs'}
+[0m17:24:12.227873 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd78a427a-3396-4116-86a7-bad084b2ccc4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F2B7D8A5D0>]}
+[0m17:24:12.325046 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd78a427a-3396-4116-86a7-bad084b2ccc4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F2B3194150>]}
+[0m17:24:12.332057 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m17:24:12.800036 [debug] [MainThread]: checksum: af1b9a16e5fbd0a87b179edfcb45ae93a86d633786f5568376090087e3997081, vars: {}, profile: schemapilot, target: dev, version: 1.12.0
+[0m17:24:13.203566 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m17:24:13.205562 [debug] [MainThread]: Partial parsing: updated file: schemapilot_transform://models\staging\stg_customers.sql
+[0m17:24:13.636589 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.schemapilot_transform.marts
+[0m17:24:13.642570 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd78a427a-3396-4116-86a7-bad084b2ccc4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F2B81EE750>]}
+[0m17:24:13.778679 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\manifest.json
+[0m17:24:13.786673 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\semantic_manifest.json
+[0m17:24:13.861217 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\lenovo\schema-pilot\backend\transform\target\osi_document.json
+[0m17:24:13.893203 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd78a427a-3396-4116-86a7-bad084b2ccc4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F2B87036D0>]}
+[0m17:24:13.895206 [info ] [MainThread]: Found 1 model, 4 sources, 486 macros
+[0m17:24:13.896221 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd78a427a-3396-4116-86a7-bad084b2ccc4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F2B86C8D50>]}
+[0m17:24:13.899409 [info ] [MainThread]: 
+[0m17:24:13.900401 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:24:13.901413 [info ] [MainThread]: 
+[0m17:24:13.903404 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m17:24:13.905398 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_schemapilot'
+[0m17:24:14.028273 [debug] [ThreadPool]: Using duckdb connection "list_schemapilot"
+[0m17:24:14.029284 [debug] [ThreadPool]: On list_schemapilot: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "list_schemapilot"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"schemapilot"'
+    
+  
+  
+[0m17:24:14.030275 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:24:14.130671 [debug] [ThreadPool]: SQL status: OK in 0.101 seconds
+[0m17:24:14.134688 [debug] [ThreadPool]: On list_schemapilot: Close
+[0m17:24:14.136681 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_schemapilot, now create_schemapilot_main)
+[0m17:24:14.138303 [debug] [ThreadPool]: Creating schema "database: "schemapilot"
+schema: "main"
+"
+[0m17:24:14.144329 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:24:14.145850 [debug] [ThreadPool]: On create_schemapilot_main: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "create_schemapilot_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='schemapilot'
+        and type='sqlite'
+    
+  
+[0m17:24:14.146875 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:24:14.149905 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m17:24:14.152113 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:24:14.153109 [debug] [ThreadPool]: On create_schemapilot_main: BEGIN
+[0m17:24:14.154926 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m17:24:14.155945 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:24:14.155945 [debug] [ThreadPool]: On create_schemapilot_main: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "create_schemapilot_main"} */
+
+    
+    
+        create schema if not exists "schemapilot"."main"
+    
+[0m17:24:14.159946 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m17:24:14.160945 [debug] [ThreadPool]: On create_schemapilot_main: COMMIT
+[0m17:24:14.161945 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:24:14.162947 [debug] [ThreadPool]: On create_schemapilot_main: COMMIT
+[0m17:24:14.163945 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:24:14.164946 [debug] [ThreadPool]: On create_schemapilot_main: Close
+[0m17:24:14.166947 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_schemapilot_main'
+[0m17:24:14.172944 [debug] [ThreadPool]: Using duckdb connection "list_schemapilot_main"
+[0m17:24:14.173944 [debug] [ThreadPool]: On list_schemapilot_main: BEGIN
+[0m17:24:14.174946 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:24:14.175945 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m17:24:14.176945 [debug] [ThreadPool]: Using duckdb connection "list_schemapilot_main"
+[0m17:24:14.176945 [debug] [ThreadPool]: On list_schemapilot_main: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "list_schemapilot_main"} */
+select
+      'schemapilot' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'schemapilot'
+  
+[0m17:24:14.196707 [debug] [ThreadPool]: SQL status: OK in 0.018 seconds
+[0m17:24:14.200243 [debug] [ThreadPool]: On list_schemapilot_main: ROLLBACK
+[0m17:24:14.203244 [debug] [ThreadPool]: Failed to rollback 'list_schemapilot_main'
+[0m17:24:14.204248 [debug] [ThreadPool]: On list_schemapilot_main: Close
+[0m17:24:14.206244 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd78a427a-3396-4116-86a7-bad084b2ccc4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F2B8A73390>]}
+[0m17:24:14.208245 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:24:14.208245 [debug] [MainThread]: On master: BEGIN
+[0m17:24:14.209241 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:24:14.210243 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m17:24:14.211242 [debug] [MainThread]: On master: COMMIT
+[0m17:24:14.212243 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:24:14.213244 [debug] [MainThread]: On master: COMMIT
+[0m17:24:14.214242 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:24:14.214242 [debug] [MainThread]: On master: Close
+[0m17:24:14.224336 [debug] [Thread-1 (]: Began running node model.schemapilot_transform.stg_customers
+[0m17:24:14.225347 [info ] [Thread-1 (]: 1 of 1 START sql view model main.stg_customers ................................. [RUN]
+[0m17:24:14.227339 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.schemapilot_transform.stg_customers'
+[0m17:24:14.227339 [debug] [Thread-1 (]: Began compiling node model.schemapilot_transform.stg_customers
+[0m17:24:14.237576 [debug] [Thread-1 (]: Writing injected SQL for node "model.schemapilot_transform.stg_customers"
+[0m17:24:14.239583 [debug] [Thread-1 (]: Began executing node model.schemapilot_transform.stg_customers
+[0m17:24:14.287286 [debug] [Thread-1 (]: Writing runtime sql for node "model.schemapilot_transform.stg_customers"
+[0m17:24:14.290301 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:24:14.291292 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: BEGIN
+[0m17:24:14.292290 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m17:24:14.294300 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m17:24:14.295288 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:24:14.297293 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_customers"} */
+
+  
+  create view "schemapilot"."main"."stg_customers__dbt_tmp" as (
+    with source as (
+    select * from "schemapilot"."main"."raw_customers"
+),
+
+cleaned as (
+    select
+        customer_id,
+        trim(name) as customer_name,
+        case 
+            when email is null or trim(email) = '' then 'unknown@placeholder.com'
+            else lower(trim(email))
+        end as email,
+        case 
+            when upper(trim(country)) in ('USA', 'UNITED STATES') then 'United States'
+            when country is null or trim(country) = '' then 'Unknown'
+            else upper(trim(country))
+        end as country,
+        try_cast(signup_date as date) as signup_date
+    from source
+    where customer_id is not null
+),
+
+deduped as (
+    select *,
+           row_number() over (partition by customer_id order by signup_date desc) as rn
+    from cleaned
+)
+
+select 
+    customer_id,
+    customer_name,
+    email,
+    country,
+    signup_date
+from deduped
+where rn = 1
+  );
+
+[0m17:24:14.311298 [debug] [Thread-1 (]: SQL status: OK in 0.013 seconds
+[0m17:24:14.322529 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:24:14.323518 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_customers"} */
+alter view "schemapilot"."main"."stg_customers__dbt_tmp" rename to "stg_customers"
+[0m17:24:14.327520 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m17:24:14.346061 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: COMMIT
+[0m17:24:14.347076 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:24:14.348074 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: COMMIT
+[0m17:24:14.357075 [debug] [Thread-1 (]: SQL status: OK in 0.008 seconds
+[0m17:24:14.364279 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:24:14.365279 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_customers"} */
+
+      drop view if exists "schemapilot"."main"."stg_customers__dbt_backup" cascade
+    
+[0m17:24:14.368292 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m17:24:14.372294 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: Close
+[0m17:24:14.375292 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd78a427a-3396-4116-86a7-bad084b2ccc4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F2B8011A50>]}
+[0m17:24:14.377294 [info ] [Thread-1 (]: 1 of 1 OK created sql view model main.stg_customers ............................ [[32mOK[0m in 0.15s]
+[0m17:24:14.378279 [debug] [Thread-1 (]: Finished running node model.schemapilot_transform.stg_customers
+[0m17:24:14.382281 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:24:14.383293 [debug] [MainThread]: On master: BEGIN
+[0m17:24:14.384289 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:24:14.386290 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m17:24:14.387286 [debug] [MainThread]: On master: COMMIT
+[0m17:24:14.388288 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:24:14.389294 [debug] [MainThread]: On master: COMMIT
+[0m17:24:14.390289 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:24:14.391282 [debug] [MainThread]: On master: Close
+[0m17:24:14.392285 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:24:14.393296 [debug] [MainThread]: Connection 'create_schemapilot_main' was properly closed.
+[0m17:24:14.394290 [debug] [MainThread]: Connection 'list_schemapilot_main' was properly closed.
+[0m17:24:14.395284 [debug] [MainThread]: Connection 'model.schemapilot_transform.stg_customers' was properly closed.
+[0m17:24:14.396283 [info ] [MainThread]: 
+[0m17:24:14.397284 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.49 seconds (0.49s).
+[0m17:24:14.398281 [debug] [MainThread]: Command end result
+[0m17:24:14.452346 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\manifest.json
+[0m17:24:14.458330 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\semantic_manifest.json
+[0m17:24:14.469339 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\lenovo\schema-pilot\backend\transform\target\osi_document.json
+[0m17:24:14.480334 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\lenovo\schema-pilot\backend\transform\target\run_results.json
+[0m17:24:14.481339 [info ] [MainThread]: 
+[0m17:24:14.483343 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:24:14.485338 [info ] [MainThread]: 
+[0m17:24:14.486337 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=1
+[0m17:24:14.488545 [debug] [MainThread]: Command `dbt run` succeeded at 17:24:14.488545 after 3.09 seconds
+[0m17:24:14.489535 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F2B7D43790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F2AFC04C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F2B7ADDAD0>]}
+[0m17:24:14.491540 [debug] [MainThread]: Flushing usage events
+[0m17:24:15.647697 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:30:02.871077 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001883CEC7610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001883CFA3710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001883CEBAA10>]}
+
+
+============================== 17:30:02.879247 | b600a58c-bcb4-41f0-9423-6a7e5ef15e55 ==============================
+[0m17:30:02.879247 [info ] [MainThread]: Running with dbt=1.12.0
+[0m17:30:02.881241 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'invocation_command': 'dbt run --profiles-dir .', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'C:\\Users\\lenovo\\schema-pilot\\backend\\transform\\logs'}
+[0m17:30:03.387663 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b600a58c-bcb4-41f0-9423-6a7e5ef15e55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001883CE0C290>]}
+[0m17:30:03.462044 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b600a58c-bcb4-41f0-9423-6a7e5ef15e55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000188383F4690>]}
+[0m17:30:03.469198 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m17:30:03.816705 [debug] [MainThread]: checksum: af1b9a16e5fbd0a87b179edfcb45ae93a86d633786f5568376090087e3997081, vars: {}, profile: schemapilot, target: dev, version: 1.12.0
+[0m17:30:04.149899 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 3 files added, 0 files changed.
+[0m17:30:04.150981 [debug] [MainThread]: Partial parsing: added file: schemapilot_transform://models\staging\stg_orders.sql
+[0m17:30:04.151516 [debug] [MainThread]: Partial parsing: added file: schemapilot_transform://models\staging\stg_products.sql
+[0m17:30:04.152578 [debug] [MainThread]: Partial parsing: added file: schemapilot_transform://models\staging\stg_order_lines.sql
+[0m17:30:04.495628 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.schemapilot_transform.marts
+[0m17:30:04.501631 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b600a58c-bcb4-41f0-9423-6a7e5ef15e55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001883D922050>]}
+[0m17:30:04.624166 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\manifest.json
+[0m17:30:04.631168 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\semantic_manifest.json
+[0m17:30:04.692454 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\lenovo\schema-pilot\backend\transform\target\osi_document.json
+[0m17:30:04.720292 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b600a58c-bcb4-41f0-9423-6a7e5ef15e55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001883D8D6690>]}
+[0m17:30:04.721295 [info ] [MainThread]: Found 4 models, 4 sources, 486 macros
+[0m17:30:04.722290 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b600a58c-bcb4-41f0-9423-6a7e5ef15e55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001883D51D690>]}
+[0m17:30:04.725562 [info ] [MainThread]: 
+[0m17:30:04.726607 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:30:04.727601 [info ] [MainThread]: 
+[0m17:30:04.729603 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m17:30:04.736596 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_schemapilot'
+[0m17:30:04.852326 [debug] [ThreadPool]: Using duckdb connection "list_schemapilot"
+[0m17:30:04.853301 [debug] [ThreadPool]: On list_schemapilot: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "list_schemapilot"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"schemapilot"'
+    
+  
+  
+[0m17:30:04.854301 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:30:04.927168 [debug] [ThreadPool]: SQL status: OK in 0.073 seconds
+[0m17:30:04.930174 [debug] [ThreadPool]: On list_schemapilot: Close
+[0m17:30:04.932170 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_schemapilot, now create_schemapilot_main)
+[0m17:30:04.933169 [debug] [ThreadPool]: Creating schema "database: "schemapilot"
+schema: "main"
+"
+[0m17:30:04.940166 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:30:04.941171 [debug] [ThreadPool]: On create_schemapilot_main: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "create_schemapilot_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='schemapilot'
+        and type='sqlite'
+    
+  
+[0m17:30:04.942173 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:30:04.944167 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m17:30:04.946500 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:30:04.947492 [debug] [ThreadPool]: On create_schemapilot_main: BEGIN
+[0m17:30:04.948502 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:30:04.949503 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:30:04.949503 [debug] [ThreadPool]: On create_schemapilot_main: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "create_schemapilot_main"} */
+
+    
+    
+        create schema if not exists "schemapilot"."main"
+    
+[0m17:30:04.951757 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m17:30:04.953775 [debug] [ThreadPool]: On create_schemapilot_main: COMMIT
+[0m17:30:04.953775 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:30:04.954771 [debug] [ThreadPool]: On create_schemapilot_main: COMMIT
+[0m17:30:04.955772 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:30:04.956773 [debug] [ThreadPool]: On create_schemapilot_main: Close
+[0m17:30:04.958773 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_schemapilot_main'
+[0m17:30:04.964778 [debug] [ThreadPool]: Using duckdb connection "list_schemapilot_main"
+[0m17:30:04.965782 [debug] [ThreadPool]: On list_schemapilot_main: BEGIN
+[0m17:30:04.965782 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:30:04.967775 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m17:30:04.967775 [debug] [ThreadPool]: Using duckdb connection "list_schemapilot_main"
+[0m17:30:04.968795 [debug] [ThreadPool]: On list_schemapilot_main: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "list_schemapilot_main"} */
+select
+      'schemapilot' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'schemapilot'
+  
+[0m17:30:04.981191 [debug] [ThreadPool]: SQL status: OK in 0.012 seconds
+[0m17:30:04.983703 [debug] [ThreadPool]: On list_schemapilot_main: ROLLBACK
+[0m17:30:04.985711 [debug] [ThreadPool]: Failed to rollback 'list_schemapilot_main'
+[0m17:30:04.985711 [debug] [ThreadPool]: On list_schemapilot_main: Close
+[0m17:30:04.988881 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b600a58c-bcb4-41f0-9423-6a7e5ef15e55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001883DCE0950>]}
+[0m17:30:04.989887 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:30:04.990880 [debug] [MainThread]: On master: BEGIN
+[0m17:30:04.991886 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:30:04.992889 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m17:30:04.993885 [debug] [MainThread]: On master: COMMIT
+[0m17:30:04.994883 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:30:04.995883 [debug] [MainThread]: On master: COMMIT
+[0m17:30:04.996883 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:30:04.997879 [debug] [MainThread]: On master: Close
+[0m17:30:05.004588 [debug] [Thread-1 (]: Began running node model.schemapilot_transform.stg_customers
+[0m17:30:05.005579 [debug] [Thread-2 (]: Began running node model.schemapilot_transform.stg_order_lines
+[0m17:30:05.005579 [debug] [Thread-3 (]: Began running node model.schemapilot_transform.stg_orders
+[0m17:30:05.006586 [debug] [Thread-4 (]: Began running node model.schemapilot_transform.stg_products
+[0m17:30:05.006586 [info ] [Thread-1 (]: 1 of 4 START sql view model main.stg_customers ................................. [RUN]
+[0m17:30:05.007586 [info ] [Thread-2 (]: 2 of 4 START sql view model main.stg_order_lines ............................... [RUN]
+[0m17:30:05.008582 [info ] [Thread-3 (]: 3 of 4 START sql view model main.stg_orders .................................... [RUN]
+[0m17:30:05.011587 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.schemapilot_transform.stg_customers'
+[0m17:30:05.009589 [info ] [Thread-4 (]: 4 of 4 START sql view model main.stg_products .................................. [RUN]
+[0m17:30:05.013584 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.schemapilot_transform.stg_order_lines'
+[0m17:30:05.014585 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.schemapilot_transform.stg_orders'
+[0m17:30:05.015581 [debug] [Thread-1 (]: Began compiling node model.schemapilot_transform.stg_customers
+[0m17:30:05.016580 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.schemapilot_transform.stg_products'
+[0m17:30:05.017589 [debug] [Thread-2 (]: Began compiling node model.schemapilot_transform.stg_order_lines
+[0m17:30:05.017589 [debug] [Thread-3 (]: Began compiling node model.schemapilot_transform.stg_orders
+[0m17:30:05.025778 [debug] [Thread-1 (]: Writing injected SQL for node "model.schemapilot_transform.stg_customers"
+[0m17:30:05.026756 [debug] [Thread-4 (]: Began compiling node model.schemapilot_transform.stg_products
+[0m17:30:05.031754 [debug] [Thread-2 (]: Writing injected SQL for node "model.schemapilot_transform.stg_order_lines"
+[0m17:30:05.035765 [debug] [Thread-3 (]: Writing injected SQL for node "model.schemapilot_transform.stg_orders"
+[0m17:30:05.038761 [debug] [Thread-4 (]: Writing injected SQL for node "model.schemapilot_transform.stg_products"
+[0m17:30:05.040119 [debug] [Thread-1 (]: Began executing node model.schemapilot_transform.stg_customers
+[0m17:30:05.049154 [debug] [Thread-2 (]: Began executing node model.schemapilot_transform.stg_order_lines
+[0m17:30:05.086060 [debug] [Thread-1 (]: Writing runtime sql for node "model.schemapilot_transform.stg_customers"
+[0m17:30:05.089031 [debug] [Thread-2 (]: Writing runtime sql for node "model.schemapilot_transform.stg_order_lines"
+[0m17:30:05.089392 [debug] [Thread-3 (]: Began executing node model.schemapilot_transform.stg_orders
+[0m17:30:05.090202 [debug] [Thread-4 (]: Began executing node model.schemapilot_transform.stg_products
+[0m17:30:05.094634 [debug] [Thread-3 (]: Writing runtime sql for node "model.schemapilot_transform.stg_orders"
+[0m17:30:05.095638 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:30:05.099637 [debug] [Thread-4 (]: Writing runtime sql for node "model.schemapilot_transform.stg_products"
+[0m17:30:05.100644 [debug] [Thread-2 (]: Using duckdb connection "model.schemapilot_transform.stg_order_lines"
+[0m17:30:05.101635 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: BEGIN
+[0m17:30:05.103873 [debug] [Thread-2 (]: On model.schemapilot_transform.stg_order_lines: BEGIN
+[0m17:30:05.103873 [debug] [Thread-3 (]: Using duckdb connection "model.schemapilot_transform.stg_orders"
+[0m17:30:05.104874 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m17:30:05.105872 [debug] [Thread-4 (]: Using duckdb connection "model.schemapilot_transform.stg_products"
+[0m17:30:05.106874 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m17:30:05.107868 [debug] [Thread-3 (]: On model.schemapilot_transform.stg_orders: BEGIN
+[0m17:30:05.108869 [debug] [Thread-4 (]: On model.schemapilot_transform.stg_products: BEGIN
+[0m17:30:05.109865 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m17:30:05.110873 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m17:30:05.112111 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m17:30:05.112881 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m17:30:05.113876 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:30:05.115873 [debug] [Thread-2 (]: Using duckdb connection "model.schemapilot_transform.stg_order_lines"
+[0m17:30:05.116870 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m17:30:05.117867 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_customers"} */
+
+  
+  create view "schemapilot"."main"."stg_customers__dbt_tmp" as (
+    with source as (
+    select * from "schemapilot"."main"."raw_customers"
+),
+
+cleaned as (
+    select
+        customer_id,
+        trim(name) as customer_name,
+        case 
+            when email is null or trim(email) = '' then 'unknown@placeholder.com'
+            else lower(trim(email))
+        end as email,
+        case 
+            when upper(trim(country)) in ('USA', 'UNITED STATES') then 'United States'
+            when country is null or trim(country) = '' then 'Unknown'
+            else upper(trim(country))
+        end as country,
+        try_cast(signup_date as date) as signup_date
+    from source
+    where customer_id is not null
+),
+
+deduped as (
+    select *,
+           row_number() over (partition by customer_id order by signup_date desc) as rn
+    from cleaned
+)
+
+select 
+    customer_id,
+    customer_name,
+    email,
+    country,
+    signup_date
+from deduped
+where rn = 1
+  );
+
+[0m17:30:05.118870 [debug] [Thread-4 (]: SQL status: OK in 0.006 seconds
+[0m17:30:05.119603 [debug] [Thread-2 (]: On model.schemapilot_transform.stg_order_lines: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_order_lines"} */
+
+  
+  create view "schemapilot"."main"."stg_order_lines__dbt_tmp" as (
+    with source as (
+    select * from "schemapilot"."main"."raw_order_lines"
+)
+select
+    line_id,
+    order_id,
+    product_id,
+    coalesce(quantity, 1) as quantity
+from source
+where line_id is not null and order_id is not null
+  );
+
+[0m17:30:05.120626 [debug] [Thread-3 (]: Using duckdb connection "model.schemapilot_transform.stg_orders"
+[0m17:30:05.122411 [debug] [Thread-4 (]: Using duckdb connection "model.schemapilot_transform.stg_products"
+[0m17:30:05.124429 [debug] [Thread-3 (]: On model.schemapilot_transform.stg_orders: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_orders"} */
+
+  
+  create view "schemapilot"."main"."stg_orders__dbt_tmp" as (
+    with source as (
+    select * from "schemapilot"."main"."raw_orders"
+),
+cleaned as (
+    select
+        order_id,
+        customer_id,
+        try_cast(order_date as timestamp) as order_date,
+        lower(trim(status)) as status,
+        row_number() over (partition by order_id order by order_date desc) as rn
+    from source
+    where order_id is not null
+)
+select
+    order_id,
+    customer_id,
+    order_date,
+    status
+from cleaned
+where rn = 1
+  );
+
+[0m17:30:05.124429 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m17:30:05.125432 [debug] [Thread-4 (]: On model.schemapilot_transform.stg_products: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_products"} */
+
+  
+  create view "schemapilot"."main"."stg_products__dbt_tmp" as (
+    with source as (
+    select * from "schemapilot"."main"."raw_products"
+)
+select
+    product_id,
+    trim(product_name) as product_name,
+    coalesce(category, 'Uncategorized') as category,
+    try_cast(price as decimal(10,2)) as price,
+    try_cast(cost as decimal(10,2)) as cost
+from source
+where product_id is not null
+  );
+
+[0m17:30:05.126431 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m17:30:05.136432 [debug] [Thread-2 (]: Using duckdb connection "model.schemapilot_transform.stg_order_lines"
+[0m17:30:05.137432 [debug] [Thread-3 (]: SQL status: OK in 0.010 seconds
+[0m17:30:05.141438 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:30:05.142434 [debug] [Thread-4 (]: SQL status: OK in 0.004 seconds
+[0m17:30:05.143437 [debug] [Thread-2 (]: On model.schemapilot_transform.stg_order_lines: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_order_lines"} */
+alter view "schemapilot"."main"."stg_order_lines__dbt_tmp" rename to "stg_order_lines"
+[0m17:30:05.146714 [debug] [Thread-3 (]: Using duckdb connection "model.schemapilot_transform.stg_orders"
+[0m17:30:05.147709 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_customers"} */
+alter view "schemapilot"."main"."stg_customers" rename to "stg_customers__dbt_backup"
+[0m17:30:05.150708 [debug] [Thread-4 (]: Using duckdb connection "model.schemapilot_transform.stg_products"
+[0m17:30:05.152378 [debug] [Thread-3 (]: On model.schemapilot_transform.stg_orders: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_orders"} */
+alter view "schemapilot"."main"."stg_orders__dbt_tmp" rename to "stg_orders"
+[0m17:30:05.153390 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m17:30:05.154389 [debug] [Thread-4 (]: On model.schemapilot_transform.stg_products: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_products"} */
+alter view "schemapilot"."main"."stg_products__dbt_tmp" rename to "stg_products"
+[0m17:30:05.155388 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m17:30:05.169384 [debug] [Thread-2 (]: On model.schemapilot_transform.stg_order_lines: COMMIT
+[0m17:30:05.170401 [debug] [Thread-3 (]: SQL status: OK in 0.015 seconds
+[0m17:30:05.174450 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:30:05.175425 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m17:30:05.176421 [debug] [Thread-2 (]: Using duckdb connection "model.schemapilot_transform.stg_order_lines"
+[0m17:30:05.178855 [debug] [Thread-3 (]: On model.schemapilot_transform.stg_orders: COMMIT
+[0m17:30:05.179861 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_customers"} */
+alter view "schemapilot"."main"."stg_customers__dbt_tmp" rename to "stg_customers"
+[0m17:30:05.181846 [debug] [Thread-4 (]: On model.schemapilot_transform.stg_products: COMMIT
+[0m17:30:05.183356 [debug] [Thread-2 (]: On model.schemapilot_transform.stg_order_lines: COMMIT
+[0m17:30:05.184377 [debug] [Thread-3 (]: Using duckdb connection "model.schemapilot_transform.stg_orders"
+[0m17:30:05.186211 [debug] [Thread-4 (]: Using duckdb connection "model.schemapilot_transform.stg_products"
+[0m17:30:05.187399 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m17:30:05.188432 [debug] [Thread-3 (]: On model.schemapilot_transform.stg_orders: COMMIT
+[0m17:30:05.189427 [debug] [Thread-4 (]: On model.schemapilot_transform.stg_products: COMMIT
+[0m17:30:05.193455 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: COMMIT
+[0m17:30:05.194485 [debug] [Thread-2 (]: SQL status: OK in 0.007 seconds
+[0m17:30:05.197425 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:30:05.198433 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m17:30:05.204430 [debug] [Thread-2 (]: Using duckdb connection "model.schemapilot_transform.stg_order_lines"
+[0m17:30:05.205424 [debug] [Thread-4 (]: SQL status: OK in 0.008 seconds
+[0m17:30:05.206435 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: COMMIT
+[0m17:30:05.208434 [debug] [Thread-3 (]: Using duckdb connection "model.schemapilot_transform.stg_orders"
+[0m17:30:05.209434 [debug] [Thread-2 (]: On model.schemapilot_transform.stg_order_lines: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_order_lines"} */
+
+      drop view if exists "schemapilot"."main"."stg_order_lines__dbt_backup" cascade
+    
+[0m17:30:05.212447 [debug] [Thread-4 (]: Using duckdb connection "model.schemapilot_transform.stg_products"
+[0m17:30:05.214430 [debug] [Thread-3 (]: On model.schemapilot_transform.stg_orders: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_orders"} */
+
+      drop view if exists "schemapilot"."main"."stg_orders__dbt_backup" cascade
+    
+[0m17:30:05.216438 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m17:30:05.216438 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m17:30:05.217430 [debug] [Thread-4 (]: On model.schemapilot_transform.stg_products: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_products"} */
+
+      drop view if exists "schemapilot"."main"."stg_products__dbt_backup" cascade
+    
+[0m17:30:05.221450 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:30:05.221450 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m17:30:05.225439 [debug] [Thread-2 (]: On model.schemapilot_transform.stg_order_lines: Close
+[0m17:30:05.226430 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_customers"} */
+
+      drop view if exists "schemapilot"."main"."stg_customers__dbt_backup" cascade
+    
+[0m17:30:05.227447 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m17:30:05.229674 [debug] [Thread-3 (]: On model.schemapilot_transform.stg_orders: Close
+[0m17:30:05.233666 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b600a58c-bcb4-41f0-9423-6a7e5ef15e55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001883DC2AA90>]}
+[0m17:30:05.235667 [debug] [Thread-4 (]: On model.schemapilot_transform.stg_products: Close
+[0m17:30:05.236669 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m17:30:05.237674 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b600a58c-bcb4-41f0-9423-6a7e5ef15e55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001883D923650>]}
+[0m17:30:05.238686 [info ] [Thread-2 (]: 2 of 4 OK created sql view model main.stg_order_lines .......................... [[32mOK[0m in 0.22s]
+[0m17:30:05.240664 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b600a58c-bcb4-41f0-9423-6a7e5ef15e55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001883DC9CD50>]}
+[0m17:30:05.242666 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: Close
+[0m17:30:05.244672 [info ] [Thread-3 (]: 3 of 4 OK created sql view model main.stg_orders ............................... [[32mOK[0m in 0.22s]
+[0m17:30:05.246674 [debug] [Thread-2 (]: Finished running node model.schemapilot_transform.stg_order_lines
+[0m17:30:05.248672 [info ] [Thread-4 (]: 4 of 4 OK created sql view model main.stg_products ............................. [[32mOK[0m in 0.22s]
+[0m17:30:05.249662 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b600a58c-bcb4-41f0-9423-6a7e5ef15e55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001883D78D210>]}
+[0m17:30:05.250665 [debug] [Thread-3 (]: Finished running node model.schemapilot_transform.stg_orders
+[0m17:30:05.252663 [debug] [Thread-4 (]: Finished running node model.schemapilot_transform.stg_products
+[0m17:30:05.254664 [info ] [Thread-1 (]: 1 of 4 OK created sql view model main.stg_customers ............................ [[32mOK[0m in 0.24s]
+[0m17:30:05.256668 [debug] [Thread-1 (]: Finished running node model.schemapilot_transform.stg_customers
+[0m17:30:05.258662 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:30:05.259660 [debug] [MainThread]: On master: BEGIN
+[0m17:30:05.260663 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:30:05.261672 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m17:30:05.262678 [debug] [MainThread]: On master: COMMIT
+[0m17:30:05.263677 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:30:05.264668 [debug] [MainThread]: On master: COMMIT
+[0m17:30:05.265676 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:30:05.266663 [debug] [MainThread]: On master: Close
+[0m17:30:05.267690 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:30:05.268700 [debug] [MainThread]: Connection 'create_schemapilot_main' was properly closed.
+[0m17:30:05.269703 [debug] [MainThread]: Connection 'list_schemapilot_main' was properly closed.
+[0m17:30:05.269703 [debug] [MainThread]: Connection 'model.schemapilot_transform.stg_customers' was properly closed.
+[0m17:30:05.270868 [debug] [MainThread]: Connection 'model.schemapilot_transform.stg_order_lines' was properly closed.
+[0m17:30:05.270868 [debug] [MainThread]: Connection 'model.schemapilot_transform.stg_orders' was properly closed.
+[0m17:30:05.271897 [debug] [MainThread]: Connection 'model.schemapilot_transform.stg_products' was properly closed.
+[0m17:30:05.272898 [info ] [MainThread]: 
+[0m17:30:05.273900 [info ] [MainThread]: Finished running 4 view models in 0 hours 0 minutes and 0.54 seconds (0.54s).
+[0m17:30:05.275902 [debug] [MainThread]: Command end result
+[0m17:30:05.327791 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\manifest.json
+[0m17:30:05.333787 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\semantic_manifest.json
+[0m17:30:05.338801 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\lenovo\schema-pilot\backend\transform\target\osi_document.json
+[0m17:30:05.348791 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\lenovo\schema-pilot\backend\transform\target\run_results.json
+[0m17:30:05.349791 [info ] [MainThread]: 
+[0m17:30:05.350795 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:30:05.351795 [info ] [MainThread]: 
+[0m17:30:05.352790 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=4
+[0m17:30:05.354961 [debug] [MainThread]: Command `dbt run` succeeded at 17:30:05.354788 after 2.63 seconds
+[0m17:30:05.354961 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001883CFACD90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018834EB4C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001883CFA2590>]}
+[0m17:30:05.355995 [debug] [MainThread]: Flushing usage events
+[0m17:30:06.850634 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:32:31.714040 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011D026ADD10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011D026BD7D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011D070AC590>]}
+
+
+============================== 17:32:31.720055 | b8e2fa45-e5d3-4ac5-805d-f57373d4224e ==============================
+[0m17:32:31.720055 [info ] [MainThread]: Running with dbt=1.12.0
+[0m17:32:31.721065 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'invocation_command': 'dbt run --profiles-dir .', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'C:\\Users\\lenovo\\schema-pilot\\backend\\transform\\logs'}
+[0m17:32:32.051346 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b8e2fa45-e5d3-4ac5-805d-f57373d4224e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011D07432E50>]}
+[0m17:32:32.132344 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b8e2fa45-e5d3-4ac5-805d-f57373d4224e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011D07361F50>]}
+[0m17:32:32.136816 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m17:32:32.467777 [debug] [MainThread]: checksum: af1b9a16e5fbd0a87b179edfcb45ae93a86d633786f5568376090087e3997081, vars: {}, profile: schemapilot, target: dev, version: 1.12.0
+[0m17:32:32.730987 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m17:32:32.731988 [debug] [MainThread]: Partial parsing: added file: schemapilot_transform://models\marts\fct_orders.sql
+[0m17:32:33.087934 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b8e2fa45-e5d3-4ac5-805d-f57373d4224e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011D04DFE0D0>]}
+[0m17:32:33.219565 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\manifest.json
+[0m17:32:33.225071 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\semantic_manifest.json
+[0m17:32:33.273129 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\lenovo\schema-pilot\backend\transform\target\osi_document.json
+[0m17:32:33.295443 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b8e2fa45-e5d3-4ac5-805d-f57373d4224e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011D07B6F250>]}
+[0m17:32:33.296432 [info ] [MainThread]: Found 5 models, 4 sources, 486 macros
+[0m17:32:33.297431 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b8e2fa45-e5d3-4ac5-805d-f57373d4224e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011D072B7590>]}
+[0m17:32:33.300430 [info ] [MainThread]: 
+[0m17:32:33.301456 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:32:33.302466 [info ] [MainThread]: 
+[0m17:32:33.303489 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m17:32:33.312499 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_schemapilot'
+[0m17:32:33.516560 [debug] [ThreadPool]: Using duckdb connection "list_schemapilot"
+[0m17:32:33.517559 [debug] [ThreadPool]: On list_schemapilot: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "list_schemapilot"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"schemapilot"'
+    
+  
+  
+[0m17:32:33.519572 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:32:33.573679 [debug] [ThreadPool]: SQL status: OK in 0.054 seconds
+[0m17:32:33.575712 [debug] [ThreadPool]: On list_schemapilot: Close
+[0m17:32:33.576722 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_schemapilot, now create_schemapilot_main)
+[0m17:32:33.577716 [debug] [ThreadPool]: Creating schema "database: "schemapilot"
+schema: "main"
+"
+[0m17:32:33.585715 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:32:33.585715 [debug] [ThreadPool]: On create_schemapilot_main: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "create_schemapilot_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='schemapilot'
+        and type='sqlite'
+    
+  
+[0m17:32:33.586717 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:32:33.588723 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m17:32:33.590721 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:32:33.591717 [debug] [ThreadPool]: On create_schemapilot_main: BEGIN
+[0m17:32:33.592718 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:32:33.593716 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:32:33.593716 [debug] [ThreadPool]: On create_schemapilot_main: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "create_schemapilot_main"} */
+
+    
+    
+        create schema if not exists "schemapilot"."main"
+    
+[0m17:32:33.594717 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:32:33.596718 [debug] [ThreadPool]: On create_schemapilot_main: COMMIT
+[0m17:32:33.596718 [debug] [ThreadPool]: Using duckdb connection "create_schemapilot_main"
+[0m17:32:33.597717 [debug] [ThreadPool]: On create_schemapilot_main: COMMIT
+[0m17:32:33.598718 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:32:33.598718 [debug] [ThreadPool]: On create_schemapilot_main: Close
+[0m17:32:33.601723 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_schemapilot_main'
+[0m17:32:33.608715 [debug] [ThreadPool]: Using duckdb connection "list_schemapilot_main"
+[0m17:32:33.608715 [debug] [ThreadPool]: On list_schemapilot_main: BEGIN
+[0m17:32:33.609717 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:32:33.610714 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m17:32:33.611724 [debug] [ThreadPool]: Using duckdb connection "list_schemapilot_main"
+[0m17:32:33.612725 [debug] [ThreadPool]: On list_schemapilot_main: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "connection_name": "list_schemapilot_main"} */
+select
+      'schemapilot' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'schemapilot'
+  
+[0m17:32:33.619954 [debug] [ThreadPool]: SQL status: OK in 0.006 seconds
+[0m17:32:33.621982 [debug] [ThreadPool]: On list_schemapilot_main: ROLLBACK
+[0m17:32:33.623967 [debug] [ThreadPool]: Failed to rollback 'list_schemapilot_main'
+[0m17:32:33.623967 [debug] [ThreadPool]: On list_schemapilot_main: Close
+[0m17:32:33.626984 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b8e2fa45-e5d3-4ac5-805d-f57373d4224e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011D071FC090>]}
+[0m17:32:33.627969 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:32:33.628982 [debug] [MainThread]: On master: BEGIN
+[0m17:32:33.628982 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:32:33.630971 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m17:32:33.631970 [debug] [MainThread]: On master: COMMIT
+[0m17:32:33.632970 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:32:33.632970 [debug] [MainThread]: On master: COMMIT
+[0m17:32:33.633978 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:32:33.634970 [debug] [MainThread]: On master: Close
+[0m17:32:33.643971 [debug] [Thread-1 (]: Began running node model.schemapilot_transform.stg_customers
+[0m17:32:33.644980 [debug] [Thread-2 (]: Began running node model.schemapilot_transform.stg_order_lines
+[0m17:32:33.644980 [debug] [Thread-3 (]: Began running node model.schemapilot_transform.stg_orders
+[0m17:32:33.645971 [debug] [Thread-4 (]: Began running node model.schemapilot_transform.stg_products
+[0m17:32:33.646975 [info ] [Thread-1 (]: 1 of 5 START sql view model main.stg_customers ................................. [RUN]
+[0m17:32:33.647972 [info ] [Thread-2 (]: 2 of 5 START sql view model main.stg_order_lines ............................... [RUN]
+[0m17:32:33.648970 [info ] [Thread-3 (]: 3 of 5 START sql view model main.stg_orders .................................... [RUN]
+[0m17:32:33.649971 [info ] [Thread-4 (]: 4 of 5 START sql view model main.stg_products .................................. [RUN]
+[0m17:32:33.651971 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.schemapilot_transform.stg_customers'
+[0m17:32:33.652975 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.schemapilot_transform.stg_order_lines'
+[0m17:32:33.654963 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.schemapilot_transform.stg_orders'
+[0m17:32:33.656178 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.schemapilot_transform.stg_products'
+[0m17:32:33.657212 [debug] [Thread-1 (]: Began compiling node model.schemapilot_transform.stg_customers
+[0m17:32:33.657212 [debug] [Thread-2 (]: Began compiling node model.schemapilot_transform.stg_order_lines
+[0m17:32:33.659456 [debug] [Thread-3 (]: Began compiling node model.schemapilot_transform.stg_orders
+[0m17:32:33.659456 [debug] [Thread-4 (]: Began compiling node model.schemapilot_transform.stg_products
+[0m17:32:33.668480 [debug] [Thread-1 (]: Writing injected SQL for node "model.schemapilot_transform.stg_customers"
+[0m17:32:33.671490 [debug] [Thread-2 (]: Writing injected SQL for node "model.schemapilot_transform.stg_order_lines"
+[0m17:32:33.675003 [debug] [Thread-3 (]: Writing injected SQL for node "model.schemapilot_transform.stg_orders"
+[0m17:32:33.679286 [debug] [Thread-4 (]: Writing injected SQL for node "model.schemapilot_transform.stg_products"
+[0m17:32:33.680760 [debug] [Thread-1 (]: Began executing node model.schemapilot_transform.stg_customers
+[0m17:32:33.681756 [debug] [Thread-2 (]: Began executing node model.schemapilot_transform.stg_order_lines
+[0m17:32:33.682772 [debug] [Thread-3 (]: Began executing node model.schemapilot_transform.stg_orders
+[0m17:32:33.709077 [debug] [Thread-4 (]: Began executing node model.schemapilot_transform.stg_products
+[0m17:32:33.723040 [debug] [Thread-1 (]: Writing runtime sql for node "model.schemapilot_transform.stg_customers"
+[0m17:32:33.727043 [debug] [Thread-2 (]: Writing runtime sql for node "model.schemapilot_transform.stg_order_lines"
+[0m17:32:33.730907 [debug] [Thread-3 (]: Writing runtime sql for node "model.schemapilot_transform.stg_orders"
+[0m17:32:33.735970 [debug] [Thread-4 (]: Writing runtime sql for node "model.schemapilot_transform.stg_products"
+[0m17:32:33.738436 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:32:33.740684 [debug] [Thread-2 (]: Using duckdb connection "model.schemapilot_transform.stg_order_lines"
+[0m17:32:33.740684 [debug] [Thread-3 (]: Using duckdb connection "model.schemapilot_transform.stg_orders"
+[0m17:32:33.741720 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: BEGIN
+[0m17:32:33.742716 [debug] [Thread-2 (]: On model.schemapilot_transform.stg_order_lines: BEGIN
+[0m17:32:33.743724 [debug] [Thread-4 (]: Using duckdb connection "model.schemapilot_transform.stg_products"
+[0m17:32:33.744726 [debug] [Thread-3 (]: On model.schemapilot_transform.stg_orders: BEGIN
+[0m17:32:33.744726 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m17:32:33.745734 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m17:32:33.746717 [debug] [Thread-4 (]: On model.schemapilot_transform.stg_products: BEGIN
+[0m17:32:33.746717 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m17:32:33.748722 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m17:32:33.749719 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m17:32:33.750717 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m17:32:33.751027 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:32:33.752061 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m17:32:33.753060 [debug] [Thread-2 (]: Using duckdb connection "model.schemapilot_transform.stg_order_lines"
+[0m17:32:33.754052 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_customers"} */
+
+  
+  create view "schemapilot"."main"."stg_customers__dbt_tmp" as (
+    with source as (
+    select * from "schemapilot"."main"."raw_customers"
+),
+
+cleaned as (
+    select
+        customer_id,
+        trim(name) as customer_name,
+        case 
+            when email is null or trim(email) = '' then 'unknown@placeholder.com'
+            else lower(trim(email))
+        end as email,
+        case 
+            when upper(trim(country)) in ('USA', 'UNITED STATES') then 'United States'
+            when country is null or trim(country) = '' then 'Unknown'
+            else upper(trim(country))
+        end as country,
+        try_cast(signup_date as date) as signup_date
+    from source
+    where customer_id is not null
+),
+
+deduped as (
+    select *,
+           row_number() over (partition by customer_id order by signup_date desc) as rn
+    from cleaned
+)
+
+select 
+    customer_id,
+    customer_name,
+    email,
+    country,
+    signup_date
+from deduped
+where rn = 1
+  );
+
+[0m17:32:33.755052 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m17:32:33.756062 [debug] [Thread-3 (]: Using duckdb connection "model.schemapilot_transform.stg_orders"
+[0m17:32:33.757064 [debug] [Thread-2 (]: On model.schemapilot_transform.stg_order_lines: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_order_lines"} */
+
+  
+  create view "schemapilot"."main"."stg_order_lines__dbt_tmp" as (
+    with source as (
+    select * from "schemapilot"."main"."raw_order_lines"
+)
+select
+    line_id,
+    order_id,
+    product_id,
+    coalesce(quantity, 1) as quantity
+from source
+where line_id is not null and order_id is not null
+  );
+
+[0m17:32:33.759053 [debug] [Thread-4 (]: Using duckdb connection "model.schemapilot_transform.stg_products"
+[0m17:32:33.760057 [debug] [Thread-3 (]: On model.schemapilot_transform.stg_orders: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_orders"} */
+
+  
+  create view "schemapilot"."main"."stg_orders__dbt_tmp" as (
+    with source as (
+    select * from "schemapilot"."main"."raw_orders"
+),
+cleaned as (
+    select
+        order_id,
+        customer_id,
+        try_cast(order_date as timestamp) as order_date,
+        lower(trim(status)) as status,
+        row_number() over (partition by order_id order by order_date desc) as rn
+    from source
+    where order_id is not null
+)
+select
+    order_id,
+    customer_id,
+    order_date,
+    status
+from cleaned
+where rn = 1
+  );
+
+[0m17:32:33.761054 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m17:32:33.762068 [debug] [Thread-4 (]: On model.schemapilot_transform.stg_products: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_products"} */
+
+  
+  create view "schemapilot"."main"."stg_products__dbt_tmp" as (
+    with source as (
+    select * from "schemapilot"."main"."raw_products"
+)
+select
+    product_id,
+    trim(product_name) as product_name,
+    coalesce(category, 'Uncategorized') as category,
+    try_cast(price as decimal(10,2)) as price,
+    try_cast(cost as decimal(10,2)) as cost
+from source
+where product_id is not null
+  );
+
+[0m17:32:33.763057 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m17:32:33.770082 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:32:33.771087 [debug] [Thread-3 (]: SQL status: OK in 0.007 seconds
+[0m17:32:33.775626 [debug] [Thread-2 (]: Using duckdb connection "model.schemapilot_transform.stg_order_lines"
+[0m17:32:33.776246 [debug] [Thread-4 (]: SQL status: OK in 0.004 seconds
+[0m17:32:33.777306 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_customers"} */
+alter view "schemapilot"."main"."stg_customers" rename to "stg_customers__dbt_backup"
+[0m17:32:33.780202 [debug] [Thread-3 (]: Using duckdb connection "model.schemapilot_transform.stg_orders"
+[0m17:32:33.781341 [debug] [Thread-2 (]: On model.schemapilot_transform.stg_order_lines: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_order_lines"} */
+alter view "schemapilot"."main"."stg_order_lines" rename to "stg_order_lines__dbt_backup"
+[0m17:32:33.785635 [debug] [Thread-4 (]: Using duckdb connection "model.schemapilot_transform.stg_products"
+[0m17:32:33.787657 [debug] [Thread-3 (]: On model.schemapilot_transform.stg_orders: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_orders"} */
+alter view "schemapilot"."main"."stg_orders" rename to "stg_orders__dbt_backup"
+[0m17:32:33.788654 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m17:32:33.790669 [debug] [Thread-4 (]: On model.schemapilot_transform.stg_products: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_products"} */
+alter view "schemapilot"."main"."stg_products" rename to "stg_products__dbt_backup"
+[0m17:32:33.791660 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m17:32:33.794653 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:32:33.795872 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m17:32:33.798652 [debug] [Thread-2 (]: Using duckdb connection "model.schemapilot_transform.stg_order_lines"
+[0m17:32:33.799651 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m17:32:33.800652 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_customers"} */
+alter view "schemapilot"."main"."stg_customers__dbt_tmp" rename to "stg_customers"
+[0m17:32:33.804661 [debug] [Thread-3 (]: Using duckdb connection "model.schemapilot_transform.stg_orders"
+[0m17:32:33.805660 [debug] [Thread-2 (]: On model.schemapilot_transform.stg_order_lines: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_order_lines"} */
+alter view "schemapilot"."main"."stg_order_lines__dbt_tmp" rename to "stg_order_lines"
+[0m17:32:33.808651 [debug] [Thread-4 (]: Using duckdb connection "model.schemapilot_transform.stg_products"
+[0m17:32:33.809649 [debug] [Thread-3 (]: On model.schemapilot_transform.stg_orders: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_orders"} */
+alter view "schemapilot"."main"."stg_orders__dbt_tmp" rename to "stg_orders"
+[0m17:32:33.810658 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m17:32:33.811652 [debug] [Thread-4 (]: On model.schemapilot_transform.stg_products: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_products"} */
+alter view "schemapilot"."main"."stg_products__dbt_tmp" rename to "stg_products"
+[0m17:32:33.811652 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m17:32:33.829461 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: COMMIT
+[0m17:32:33.829461 [debug] [Thread-3 (]: SQL status: OK in 0.017 seconds
+[0m17:32:33.832466 [debug] [Thread-2 (]: On model.schemapilot_transform.stg_order_lines: COMMIT
+[0m17:32:33.833461 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m17:32:33.834461 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:32:33.836466 [debug] [Thread-3 (]: On model.schemapilot_transform.stg_orders: COMMIT
+[0m17:32:33.837589 [debug] [Thread-2 (]: Using duckdb connection "model.schemapilot_transform.stg_order_lines"
+[0m17:32:33.840470 [debug] [Thread-4 (]: On model.schemapilot_transform.stg_products: COMMIT
+[0m17:32:33.841462 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: COMMIT
+[0m17:32:33.841462 [debug] [Thread-3 (]: Using duckdb connection "model.schemapilot_transform.stg_orders"
+[0m17:32:33.842462 [debug] [Thread-2 (]: On model.schemapilot_transform.stg_order_lines: COMMIT
+[0m17:32:33.843462 [debug] [Thread-4 (]: Using duckdb connection "model.schemapilot_transform.stg_products"
+[0m17:32:33.844465 [debug] [Thread-3 (]: On model.schemapilot_transform.stg_orders: COMMIT
+[0m17:32:33.848738 [debug] [Thread-4 (]: On model.schemapilot_transform.stg_products: COMMIT
+[0m17:32:33.850748 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m17:32:33.857865 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.stg_customers"
+[0m17:32:33.858907 [debug] [Thread-4 (]: SQL status: OK in 0.009 seconds
+[0m17:32:33.859907 [debug] [Thread-2 (]: SQL status: OK in 0.014 seconds
+[0m17:32:33.859907 [debug] [Thread-3 (]: SQL status: OK in 0.010 seconds
+[0m17:32:33.860925 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_customers"} */
+
+      drop view if exists "schemapilot"."main"."stg_customers__dbt_backup" cascade
+    
+[0m17:32:33.862907 [debug] [Thread-4 (]: Using duckdb connection "model.schemapilot_transform.stg_products"
+[0m17:32:33.865904 [debug] [Thread-2 (]: Using duckdb connection "model.schemapilot_transform.stg_order_lines"
+[0m17:32:33.870248 [debug] [Thread-3 (]: Using duckdb connection "model.schemapilot_transform.stg_orders"
+[0m17:32:33.872237 [debug] [Thread-4 (]: On model.schemapilot_transform.stg_products: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_products"} */
+
+      drop view if exists "schemapilot"."main"."stg_products__dbt_backup" cascade
+    
+[0m17:32:33.872237 [debug] [Thread-2 (]: On model.schemapilot_transform.stg_order_lines: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_order_lines"} */
+
+      drop view if exists "schemapilot"."main"."stg_order_lines__dbt_backup" cascade
+    
+[0m17:32:33.874950 [debug] [Thread-3 (]: On model.schemapilot_transform.stg_orders: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.stg_orders"} */
+
+      drop view if exists "schemapilot"."main"."stg_orders__dbt_backup" cascade
+    
+[0m17:32:33.874950 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m17:32:33.879948 [debug] [Thread-1 (]: On model.schemapilot_transform.stg_customers: Close
+[0m17:32:33.880955 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m17:32:33.880955 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m17:32:33.883944 [debug] [Thread-3 (]: SQL status: OK in 0.007 seconds
+[0m17:32:33.885946 [debug] [Thread-4 (]: On model.schemapilot_transform.stg_products: Close
+[0m17:32:33.888961 [debug] [Thread-2 (]: On model.schemapilot_transform.stg_order_lines: Close
+[0m17:32:33.890066 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b8e2fa45-e5d3-4ac5-805d-f57373d4224e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011D07F90690>]}
+[0m17:32:33.891942 [debug] [Thread-3 (]: On model.schemapilot_transform.stg_orders: Close
+[0m17:32:33.892941 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b8e2fa45-e5d3-4ac5-805d-f57373d4224e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011D09097890>]}
+[0m17:32:33.893948 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b8e2fa45-e5d3-4ac5-805d-f57373d4224e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011D09087B50>]}
+[0m17:32:33.895941 [info ] [Thread-1 (]: 1 of 5 OK created sql view model main.stg_customers ............................ [[32mOK[0m in 0.23s]
+[0m17:32:33.897066 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b8e2fa45-e5d3-4ac5-805d-f57373d4224e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011D09086390>]}
+[0m17:32:33.898951 [info ] [Thread-4 (]: 4 of 5 OK created sql view model main.stg_products ............................. [[32mOK[0m in 0.24s]
+[0m17:32:33.899951 [info ] [Thread-2 (]: 2 of 5 OK created sql view model main.stg_order_lines .......................... [[32mOK[0m in 0.24s]
+[0m17:32:33.901952 [debug] [Thread-1 (]: Finished running node model.schemapilot_transform.stg_customers
+[0m17:32:33.904954 [debug] [Thread-4 (]: Finished running node model.schemapilot_transform.stg_products
+[0m17:32:33.902949 [info ] [Thread-3 (]: 3 of 5 OK created sql view model main.stg_orders ............................... [[32mOK[0m in 0.24s]
+[0m17:32:33.905954 [debug] [Thread-2 (]: Finished running node model.schemapilot_transform.stg_order_lines
+[0m17:32:33.907950 [debug] [Thread-3 (]: Finished running node model.schemapilot_transform.stg_orders
+[0m17:32:33.909165 [debug] [Thread-1 (]: Began running node model.schemapilot_transform.fct_orders
+[0m17:32:33.910235 [info ] [Thread-1 (]: 5 of 5 START sql table model main.fct_orders ................................... [RUN]
+[0m17:32:33.911241 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.schemapilot_transform.stg_customers, now model.schemapilot_transform.fct_orders)
+[0m17:32:33.912242 [debug] [Thread-1 (]: Began compiling node model.schemapilot_transform.fct_orders
+[0m17:32:33.915234 [debug] [Thread-1 (]: Writing injected SQL for node "model.schemapilot_transform.fct_orders"
+[0m17:32:33.918245 [debug] [Thread-1 (]: Began executing node model.schemapilot_transform.fct_orders
+[0m17:32:33.942234 [debug] [Thread-1 (]: Writing runtime sql for node "model.schemapilot_transform.fct_orders"
+[0m17:32:33.946245 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.fct_orders"
+[0m17:32:33.947246 [debug] [Thread-1 (]: On model.schemapilot_transform.fct_orders: BEGIN
+[0m17:32:33.948244 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:32:33.949292 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m17:32:33.950241 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.fct_orders"
+[0m17:32:33.950446 [debug] [Thread-1 (]: On model.schemapilot_transform.fct_orders: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.fct_orders"} */
+
+  
+    
+    
+
+    create  table
+      "schemapilot"."main"."fct_orders__dbt_tmp"
+  
+    as (
+      with orders as (
+    select * from "schemapilot"."main"."stg_orders"
+),
+
+customers as (
+    select * from "schemapilot"."main"."stg_customers"
+),
+
+order_lines as (
+    select * from "schemapilot"."main"."stg_order_lines"
+),
+
+products as (
+    select * from "schemapilot"."main"."stg_products"
+),
+
+line_aggregates as (
+    select
+        order_id,
+        sum(quantity) as total_quantity,
+        count(distinct product_id) as distinct_products_count
+    from order_lines
+    group by order_id
+),
+
+final as (
+    select
+        o.order_id,
+        o.customer_id,
+        c.customer_name,
+        c.country,
+        o.order_date,
+        o.status,
+        coalesce(l.total_quantity, 0) as total_quantity,
+        coalesce(l.distinct_products_count, 0) as distinct_products_count
+    from orders o
+    left join customers c on o.customer_id = c.customer_id
+    left join line_aggregates l on o.order_id = l.order_id
+)
+
+select * from final
+    );
+  
+  
+[0m17:32:34.019982 [debug] [Thread-1 (]: SQL status: OK in 0.069 seconds
+[0m17:32:34.023991 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.fct_orders"
+[0m17:32:34.024988 [debug] [Thread-1 (]: On model.schemapilot_transform.fct_orders: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.fct_orders"} */
+alter table "schemapilot"."main"."fct_orders__dbt_tmp" rename to "fct_orders"
+[0m17:32:34.026984 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m17:32:34.032985 [debug] [Thread-1 (]: On model.schemapilot_transform.fct_orders: COMMIT
+[0m17:32:34.032985 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.fct_orders"
+[0m17:32:34.033986 [debug] [Thread-1 (]: On model.schemapilot_transform.fct_orders: COMMIT
+[0m17:32:34.042796 [debug] [Thread-1 (]: SQL status: OK in 0.008 seconds
+[0m17:32:34.044779 [debug] [Thread-1 (]: Using duckdb connection "model.schemapilot_transform.fct_orders"
+[0m17:32:34.045833 [debug] [Thread-1 (]: On model.schemapilot_transform.fct_orders: /* {"app": "dbt", "dbt_version": "1.12.0", "profile_name": "schemapilot", "target_name": "dev", "node_id": "model.schemapilot_transform.fct_orders"} */
+
+      drop table if exists "schemapilot"."main"."fct_orders__dbt_backup" cascade
+    
+[0m17:32:34.046793 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m17:32:34.048796 [debug] [Thread-1 (]: On model.schemapilot_transform.fct_orders: Close
+[0m17:32:34.049807 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b8e2fa45-e5d3-4ac5-805d-f57373d4224e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011D09066F10>]}
+[0m17:32:34.050797 [info ] [Thread-1 (]: 5 of 5 OK created sql table model main.fct_orders .............................. [[32mOK[0m in 0.14s]
+[0m17:32:34.051771 [debug] [Thread-1 (]: Finished running node model.schemapilot_transform.fct_orders
+[0m17:32:34.054762 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:32:34.055765 [debug] [MainThread]: On master: BEGIN
+[0m17:32:34.056765 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:32:34.058766 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m17:32:34.058766 [debug] [MainThread]: On master: COMMIT
+[0m17:32:34.059778 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:32:34.060777 [debug] [MainThread]: On master: COMMIT
+[0m17:32:34.061773 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m17:32:34.061773 [debug] [MainThread]: On master: Close
+[0m17:32:34.062775 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:32:34.063775 [debug] [MainThread]: Connection 'create_schemapilot_main' was properly closed.
+[0m17:32:34.063775 [debug] [MainThread]: Connection 'list_schemapilot_main' was properly closed.
+[0m17:32:34.064780 [debug] [MainThread]: Connection 'model.schemapilot_transform.fct_orders' was properly closed.
+[0m17:32:34.064780 [debug] [MainThread]: Connection 'model.schemapilot_transform.stg_order_lines' was properly closed.
+[0m17:32:34.065776 [debug] [MainThread]: Connection 'model.schemapilot_transform.stg_orders' was properly closed.
+[0m17:32:34.065776 [debug] [MainThread]: Connection 'model.schemapilot_transform.stg_products' was properly closed.
+[0m17:32:34.066776 [info ] [MainThread]: 
+[0m17:32:34.067783 [info ] [MainThread]: Finished running 1 table model, 4 view models in 0 hours 0 minutes and 0.76 seconds (0.76s).
+[0m17:32:34.069788 [debug] [MainThread]: Command end result
+[0m17:32:34.114623 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\manifest.json
+[0m17:32:34.120135 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\lenovo\schema-pilot\backend\transform\target\semantic_manifest.json
+[0m17:32:34.125149 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\lenovo\schema-pilot\backend\transform\target\osi_document.json
+[0m17:32:34.134167 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\lenovo\schema-pilot\backend\transform\target\run_results.json
+[0m17:32:34.135151 [info ] [MainThread]: 
+[0m17:32:34.136149 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:32:34.137180 [info ] [MainThread]: 
+[0m17:32:34.138142 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=5
+[0m17:32:34.141151 [debug] [MainThread]: Command `dbt run` succeeded at 17:32:34.140138 after 2.57 seconds
+[0m17:32:34.141151 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011D7F114C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011D07242590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011D071474D0>]}
+[0m17:32:34.142138 [debug] [MainThread]: Flushing usage events
+[0m17:32:35.296981 [debug] [MainThread]: An error was encountered while trying to flush usage events

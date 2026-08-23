@@ -1,0 +1,54 @@
+database: schemapilot_alt
+tables:
+  sales_ledger:
+    type: base table
+    columns:
+      transaction_id:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - TXN_00018
+        - TXN_00023
+        - TXN_00029
+      client_id:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - CL_018
+        - CL_022
+        - CL_004
+      client_name:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - Client 27
+        - Client 49
+        - Client 37
+      destination_region:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - Europe
+        - Unknown
+        - North America
+      purchase_timestamp:
+        data_type: TIMESTAMP
+        nullable: true
+        sample_values:
+        - 2026-06-30 17:59:26.868325
+        - 2026-07-09 17:59:26.868325
+        - 2026-07-19 17:59:26.868325
+      item_count:
+        data_type: INTEGER
+        nullable: true
+        sample_values:
+        - 1
+        - 2
+        - 6
+      order_status:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - cancelled
+        - pending
+        - completed
