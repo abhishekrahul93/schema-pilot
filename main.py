@@ -1,4 +1,5 @@
 import os
+import sys
 import traceback
 import uvicorn
 from fastapi import FastAPI, Request
@@ -7,6 +8,11 @@ from fastapi.responses import HTMLResponse
 from pydantic import BaseModel, Field
 from typing import Optional, Dict, Any
 
+# Ensure backend directory is in sys.path so internal imports work from any execution root
+backend_dir = os.path.dirname(os.path.abspath(__file__))
+if backend_dir not in sys.path:
+    sys.path.insert(0, backend_dir)
+
 app = FastAPI(title="SchemaPilot API", version="1.0.0")
 
 class AgentRequestPayload(BaseModel):
@@ -14,51 +20,78 @@ class AgentRequestPayload(BaseModel):
     custom_schema: Optional[str] = Field(default="default", max_length=50)
     parameters: Optional[Dict[str, Any]] = None
 
-# Safely import modules individually
+# Safely import modules individually with fallback paths
+agent = multi_agent = multi_agent_audited = multi_agent_healing = extract_metadata = extract_alt_metadata = evaluate = None
+
 try:
     import agent
-except Exception as e:
-    agent = None
+except Exception:
+    try:
+        from backend import agent
+    except Exception:
+        agent = None
 
 try:
     import multi_agent
-except Exception as e:
-    multi_agent = None
+except Exception:
+    try:
+        from backend import multi_agent
+    except Exception:
+        multi_agent = None
 
 try:
     import multi_agent_audited
-except Exception as e:
-    multi_agent_audited = None
+except Exception:
+    try:
+        from backend import multi_agent_audited
+    except Exception:
+        multi_agent_audited = None
 
 try:
     import multi_agent_healing
-except Exception as e:
-    multi_agent_healing = None
+except Exception:
+    try:
+        from backend import multi_agent_healing
+    except Exception:
+        multi_agent_healing = None
 
 try:
     import extract_metadata
-except Exception as e:
-    extract_metadata = None
+except Exception:
+    try:
+        from backend import extract_metadata
+    except Exception:
+        extract_metadata = None
 
 try:
     import extract_alt_metadata
-except Exception as e:
-    extract_alt_metadata = None
+except Exception:
+    try:
+        from backend import extract_alt_metadata
+    except Exception:
+        extract_alt_metadata = None
 
 try:
     import evaluate
-except Exception as e:
-    evaluate = None
+except Exception:
+    try:
+        from backend import evaluate
+    except Exception:
+        evaluate = None
 
 # Mount static files if directory exists
-if os.path.exists("static"):
+static_path = os.path.join(backend_dir, "static")
+if os.path.exists(static_path):
+    app.mount("/static", StaticFiles(directory=static_path), name="static")
+elif os.path.exists("static"):
     app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/", response_class=HTMLResponse)
 def read_root():
-    if os.path.exists("static/index.html"):
-        with open("static/index.html", "r", encoding="utf-8") as f:
-            return f.read()
+    for path in ["static/index.html", os.path.join(backend_dir, "static/index.html")]:
+        if os.path.exists(path):
+            with open(path, "r", encoding="utf-8") as f:
+                return f.read()
     return "<h1>Welcome to SchemaPilot 🚀</h1>"
 
 @app.get("/health")
@@ -76,7 +109,7 @@ def run_agent(request: Request, payload: Optional[AgentRequestPayload] = None):
         custom_question = None
         if payload and payload.parameters:
             custom_question = payload.parameters.get("question")
-        
+         
         if hasattr(agent, "run"):
             result = agent.run(question=custom_question) if custom_question else agent.run()
         elif hasattr(agent, "inspect_schema"):
