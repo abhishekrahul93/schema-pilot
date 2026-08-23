@@ -1,0 +1,11 @@
+[
+  {
+    "test_id": "test_health_01",
+    "workflow": "/health",
+    "input": {},
+    "expected_type": "exact_match",
+    "expected_properties": {
+      "status": "healthy"
+    }
+  }
+]

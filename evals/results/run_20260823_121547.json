@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-08-23T12:15:47.169989",
+  "total_tests": 1,
+  "passed_tests": 1,
+  "pass_rate_percent": 100.0,
+  "average_score": 1.0,
+  "results": [
+    {
+      "test_id": "test_health_01",
+      "workflow": "/health",
+      "input": {},
+      "score": 1.0,
+      "reason": "All exact match properties verified successfully.",
+      "actual_output": {
+        "status": "healthy",
+        "service": "schema-pilot"
+      }
+    }
+  ]
+}

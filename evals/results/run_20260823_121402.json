@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-08-23T12:14:02.767765",
+  "total_tests": 1,
+  "passed_tests": 0,
+  "pass_rate_percent": 0.0,
+  "average_score": 0.0,
+  "results": [
+    {
+      "test_id": "test_health_01",
+      "workflow": "/health",
+      "input": {},
+      "score": 0.0,
+      "reason": "Missing expected key: 'status'",
+      "actual_output": {
+        "detail": "Not Found"
+      }
+    }
+  ]
+}
