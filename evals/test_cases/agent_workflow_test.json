@@ -1,0 +1,11 @@
+[
+  {
+    "test_id": "test_agent_sql_01",
+    "workflow": "/api/query",
+    "input": {
+      "prompt": "Show me the top 5 customers by total order value."
+    },
+    "expected_type": "llm_judge",
+    "rubric": "Verify that the output contains a valid SQL query or a structured data response answering the prompt about top 5 customers, and that it contains no syntax errors or hallucinated table columns."
+  }
+]
