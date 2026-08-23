@@ -1,0 +1,56 @@
+[
+  {
+    "test_id": "tc_agent_sales_01",
+    "workflow": "/agent",
+    "input": {"parameters": {"question": "What are our total sales by product category?"}},
+    "expected_type": "exact_match",
+    "expected_properties": {
+      "contains_keywords": ["Electronics", "Apparel", "Home & Kitchen", "Books"],
+      "should_not_contain": ["Error", "EXCEPTION"]
+    }
+  },
+  {
+    "test_id": "tc_agent_customers_02",
+    "workflow": "/agent",
+    "input": {"parameters": {"question": "Which customers placed the most orders?"}},
+    "expected_type": "exact_match",
+    "expected_properties": {
+      "contains_keywords": ["CUST_0102", "orders"],
+      "should_not_contain": ["Error"]
+    }
+  },
+  {
+    "test_id": "tc_agent_edge_malformed_03",
+    "workflow": "/agent",
+    "input": {"parameters": {"question": "Select all non_existent_column from missing_table_xyz"}},
+    "expected_type": "llm_judge",
+    "rubric": "Verify that the agent gracefully handles missing schemas or nonexistent columns by explaining the issue or returning a polite failure explanation rather than crashing with an unhandled exception."
+  },
+  {
+    "test_id": "tc_multi_agent_04",
+    "workflow": "/multi-agent",
+    "input": {},
+    "expected_type": "exact_match",
+    "expected_properties": {
+      "status_check": "success"
+    }
+  },
+  {
+    "test_id": "tc_audit_pipeline_05",
+    "workflow": "/multi-agent-audited",
+    "input": {},
+    "expected_type": "exact_match",
+    "expected_properties": {
+      "status_check": "success"
+    }
+  },
+  {
+    "test_id": "tc_healing_audit_06",
+    "workflow": "/multi-agent-healing",
+    "input": {},
+    "expected_type": "exact_match",
+    "expected_properties": {
+      "status_check": "success"
+    }
+  }
+]

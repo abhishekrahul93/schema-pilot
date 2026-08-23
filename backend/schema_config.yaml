@@ -1,0 +1,337 @@
+database: schemapilot
+tables:
+  fct_orders:
+    type: base table
+    columns:
+      order_id:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - ORD_00002
+        - ORD_00007
+        - ORD_00012
+      customer_id:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - CUST_0078
+        - CUST_0055
+        - CUST_0523
+      customer_name:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - George Brown
+        - Charlie Moore
+        - Fiona Wilson
+      country:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - Unknown
+        - UK
+        - United States
+      order_date:
+        data_type: TIMESTAMP
+        nullable: true
+        sample_values:
+        - 2026-05-10 17:12:16
+        - 2026-02-19 17:12:16
+        - 2026-03-29 17:12:16
+      status:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - completed
+        - shipped
+        - cancelled
+      total_quantity:
+        data_type: HUGEINT
+        nullable: true
+        sample_values:
+        - 2
+        - 11
+        - 19
+      distinct_products_count:
+        data_type: BIGINT
+        nullable: true
+        sample_values:
+        - 1
+        - 2
+        - 4
+  raw_customers:
+    type: base table
+    columns:
+      customer_id:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - CUST_0011
+        - CUST_0024
+        - CUST_0044
+      name:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - George Smith
+        - Diana Smith
+        - Diana Wilson
+      email:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - charlie.taylor@example.com
+        - fiona.jones@example.com
+        - ' hannah.wilson@gmail.com '
+      country:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - UK
+        - ''
+        - '   '
+      signup_date:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - '2025-09-14'
+        - '2026-06-27'
+        - '2025-12-28'
+  raw_orders:
+    type: base table
+    columns:
+      order_id:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - ORD_00001
+        - ORD_00011
+        - ORD_00022
+      customer_id:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - CUST_0328
+        - CUST_0774
+        - CUST_0192
+      order_date:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - '2026-05-11 17:12:16'
+        - '2026-02-12 17:12:16'
+        - '2026-06-23 17:12:16'
+      status:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - cancelled
+        - COMPLETED
+        - completed
+  raw_order_lines:
+    type: base table
+    columns:
+      line_id:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - LINE_000009
+        - LINE_000021
+        - LINE_000037
+      order_id:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - ORD_00003
+        - ORD_00009
+        - ORD_00013
+      product_id:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - PROD_148
+        - PROD_145
+        - PROD_110
+      quantity:
+        data_type: INTEGER
+        nullable: true
+        sample_values:
+        - 1
+        - 5
+        - 3
+  raw_products:
+    type: base table
+    columns:
+      product_id:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - PROD_014
+        - PROD_021
+        - PROD_027
+      product_name:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - Product 1
+        - Product 11
+        - Product 16
+      category:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - Apparel
+        - Electronics
+        - Books
+      price:
+        data_type: DECIMAL(10,2)
+        nullable: true
+        sample_values:
+        - 396.98
+        - 449.6
+        - 486.75
+      cost:
+        data_type: DECIMAL(10,2)
+        nullable: true
+        sample_values:
+        - 233.72
+        - 224.8
+        - 214.19
+  stg_customers:
+    type: view
+    columns:
+      customer_id:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - CUST_0042
+        - CUST_0137
+        - CUST_0200
+      customer_name:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - Alice Brown
+        - George Wilson
+        - Hannah Smith
+      email:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - hannah.brown@example.com
+        - george.miller@example.com
+        - fiona.smith@gmail.com
+      country:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - UK
+        - United States
+        - GERMANY
+      signup_date:
+        data_type: DATE
+        nullable: true
+        sample_values:
+        - 2026-05-05
+        - 2025-09-21
+        - 2026-04-19
+  stg_orders:
+    type: view
+    columns:
+      order_id:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - ORD_00111
+        - ORD_00162
+        - ORD_00265
+      customer_id:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - CUST_0474
+        - CUST_0023
+        - CUST_0370
+      order_date:
+        data_type: TIMESTAMP
+        nullable: true
+        sample_values:
+        - 2026-06-21 17:12:16
+        - 2026-07-18 17:12:16
+        - 2026-07-17 17:12:16
+      status:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - shipped
+        - cancelled
+        - completed
+  stg_order_lines:
+    type: view
+    columns:
+      line_id:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - LINE_000009
+        - LINE_000021
+        - LINE_000037
+      order_id:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - ORD_00002
+        - ORD_00007
+        - ORD_00012
+      product_id:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - PROD_148
+        - PROD_145
+        - PROD_110
+      quantity:
+        data_type: INTEGER
+        nullable: true
+        sample_values:
+        - 1
+        - 5
+        - 2
+  stg_products:
+    type: view
+    columns:
+      product_id:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - PROD_008
+        - PROD_020
+        - PROD_026
+      product_name:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - Product 30
+        - Product 31
+        - Product 32
+      category:
+        data_type: VARCHAR
+        nullable: true
+        sample_values:
+        - Apparel
+        - Electronics
+        - Books
+      price:
+        data_type: DECIMAL(10,2)
+        nullable: true
+        sample_values:
+        - 428.37
+        - 370.35
+        - 271.01
+      cost:
+        data_type: DECIMAL(10,2)
+        nullable: true
+        sample_values:
+        - 108.23
+        - 134.55
+        - 95.25
